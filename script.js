@@ -600,7 +600,6 @@ const detallesProductos = {
         aplicacion: "1. Lavar exteriormente con Shampoo pH Neutro, Esponja Dual y cepillo de ruedas.\n2. Secar con paño Waffle sin rayar la pintura.\n3. Aplicar Cera protectora con Foam Applicator y lustrar con microfibra.\n4. Limpiar interior con APC, acondicionar plásticos con Silicona y perfumar con Aromatizante."
     }
 };
-};
 
 const modalProducto = document.getElementById("modal-producto");
 const detalleImagen = document.getElementById("detalle-imagen");
