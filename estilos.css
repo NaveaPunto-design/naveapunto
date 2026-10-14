@@ -1328,3 +1328,63 @@ body.modal-producto-abierto {
         max-width: 100% !important;
     }
 }
+/* --- CORRECCIÓN RESPONSIVE PARA CELULARES --- */
+@media (max-width: 768px) {
+    /* 1. Achicar encabezado y barra de navegación */
+    header, nav {
+        padding: 5px 10px !important;
+    }
+
+    .logo img, header img {
+        max-height: 40px !important; /* Achica el logo para que no ocupe tanto alto */
+        width: auto !important;
+    }
+
+    nav ul {
+        gap: 8px !important;
+        font-size: 0.75rem !important; /* Achica la letra del menú */
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    /* 2. Botón del carrito más compacto */
+    .btn-carrito, #btn-carrito, .carrito-btn {
+        padding: 4px 10px !important;
+        font-size: 0.8rem !important;
+        margin: 5px auto !important;
+    }
+
+    /* 3. Arreglar sección Hero y la imagen del Auto */
+    .hero, #inicio, .hero-section {
+        padding-top: 20px !important;
+        min-height: 80vh !important;
+        background-size: cover !important;
+        background-position: center center !important; /* Centra la imagen del auto */
+        background-repeat: no-repeat !important;
+    }
+
+    .hero img, .hero-bg {
+        object-fit: cover !important;
+        object-position: center !important;
+        width: 100% !important;
+    }
+
+    .hero h1, .hero-title {
+        font-size: 1.6rem !important; /* Achica el título para que no quede aplastado */
+        line-height: 1.2 !important;
+        margin-top: 10px !important;
+    }
+
+    .hero p {
+        font-size: 0.9rem !important;
+        padding: 0 15px !important;
+    }
+
+    /* 4. Grilla de productos en 2 columnas */
+    .grilla-productos, .productos-grid, .grid-productos, .combos-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 10px !important;
+    }
+}
