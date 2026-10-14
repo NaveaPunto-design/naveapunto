@@ -371,7 +371,6 @@ function agregarAlCarrito(id) {
 
     actualizarCarrito();
 
-    // Disparar aviso flotante (Toast)
     const toastTitulo = document.getElementById('toast-titulo');
     const toastSubtitulo = document.getElementById('toast-subtitulo');
     if (toastTitulo && toastSubtitulo) {
@@ -411,14 +410,12 @@ function quitarDelCarrito(id) {
 
 function abrirCarrito() {
     if (!fondoCarrito) return;
-
     fondoCarrito.classList.add("abierto");
     document.body.classList.add("carrito-abierto");
 }
 
 function cerrarCarrito() {
     if (!fondoCarrito) return;
-
     fondoCarrito.classList.remove("abierto");
     document.body.classList.remove("carrito-abierto");
 }
@@ -526,75 +523,59 @@ if (botonFinalizar) {
     botonFinalizar.addEventListener("click", finalizarCompra);
 }
 
-mostrarProductos();
-actualizarCarrito();
-
 const detallesProductos = {
     "Sport Car Essence": {
         uso: "Fragancia concentrada formulada para eliminar malos olores dentro del habitáculo y dejar un ambiente fresco y agradable por semanas. No deja manchas sobre tapizados ni plásticos.",
         aplicacion: "1. Agitar el envase antes de usar.\n2. Rocear a 20-30 cm de distancia sobre alfombras de tela o debajo de los asientos.\n3. Evitar pulverizar directamente sobre cristales o pantallas táctiles."
     },
-
     "Silicona para interiores": {
         uso: "Acondicionador de plásticos, vinilos y torpedos que restaura el color original, aporta protección contra la decoloración por rayos UV y deja un acabado satinado sin sensación grasosa.",
         aplicacion: "1. Limpiar previamente el polvo de la superficie con microfibra húmeda.\n2. Aplicar unas gotas del producto sobre un pad o aplicador de poliespuma.\n3. Extender de manera uniforme y repasar con una microfibra limpia y seca para retirar excesos."
     },
-
     "Car Wash PH Neutro": {
         uso: "Shampoo de alta espuma y pH neutro formulado para desprender la suciedad y tierra vial sin barrer ceras, selladores ni tratamientos cerámicos previos.",
         aplicacion: "1. Diluir de 30 a 50 ml de shampoo en un balde con 10 litros de agua limpia.\n2. Generar espuma e impregnar un guante o esponja de microfibra.\n3. Lavar la carrocería siempre de arriba hacia abajo y enjuagar con abundante agua a presión."
     },
-
     "APC All Purpose": {
         uso: "Limpiador multipropósito concentrado de alto poder desengrasante. Ideal para limpiar interiores (plásticos, telas, cuero), motor, pasos de rueda y manchas difíciles.",
         aplicacion: "1. Diluir el producto según el tipo de suciedad (1:10 para liviana, 1:5 para pesada).\n2. Pulverizar sobre la superficie o un cepillo suave de detailing.\n3. Trabajar la zona y retirar el producto inmediatamente con una microfibra húmeda. No dejar secar sobre la superficie."
     },
-
     "Car Wax": {
         uso: "Cera protectora de alta calidad que intensifica el brillo, resalta la profundidad del color y aporta un acabado suave al tacto con excelente repelencia al agua y al polvo.",
         aplicacion: "1. Lavar y secar completamente el vehículo a la sombra.\n2. Aplicar una capa fina y pareja panel por panel usando un aplicador de espuma.\n3. Dejar actuar unos minutos y lustrar con una microfibra limpia hasta lograr brillo espejo."
     },
-
     "Microfibra de secado Waffle": {
         uso: "Toalla de secado técnico con entramado tipo 'waffle' que absorbe hasta 7 veces su peso en agua, evitando refregar y reduciendo a cero la creación de micro-rayas (swirls).",
         aplicacion: "1. Desplegar la microfibra sobre el panel húmedo después del enjuague.\n2. Deslizar suavemente tirando de las esquinas sin ejercer presión vertical.\n3. Al finalizar, lavar con agua fría y jabón neutro (sin suavizantes)."
     },
-
     "Esponja Microfibra Dual": {
         uso: "Accesorio de lavado de doble cara: un lado con fideos de microfibra suaves para retener suciedad en la carrocería y otro lado de textura suave para remover bichos y suciedad pegada.",
         aplicacion: "1. Sumergir en la balde con shampoo para que absorba bastante espuma.\n2. Pasarla suavemente sobre el vehículo sin presionar fuerte.\n3. Enjuagar la esponja con agua limpia frecuentemente durante el lavado."
     },
-
     "Foam Applicator": {
         uso: "Pads o aplicadores de poliespuma de alta densidad diseñados para la aplicación uniforme y controlada de ceras, acondicionadores de plásticos, geles de cubierta y acondicionadores de cuero.",
         aplicacion: "1. Colocar una pequeña cantidad de producto en el centro del pad.\n2. Trabajar sobre la superficie haciendo movimientos circulares o lineales cruzados.\n3. Lavar con agua tibia y detergente neutro después de cada uso."
     },
-
     "Pack Microfibra Multiuso": {
         uso: "Set de 3 paños de microfibra premium de alta densidad sin bordes agresivos. Indispensables para retirar ceras, limpiar vidrios, aplicar detalladores rápidos y acondicionar el interior.",
         aplicacion: "1. Asignar un color de microfibra para cada tarea (ej: azul para vidrios, verde para interiores).\n2. Utilizar siempre doblada en cuatro partes para tener 8 caras limpias de trabajo.\n3. Lavar con jabón neutro a mano o lavarropas."
     },
-
     "Wheel & Tire Brush": {
         uso: "Cepillo de cerdas resistentes diseñado ergónomicamente para remover polvillo de freno pegado, barro y grasa en llantas, neumáticos y pasos de rueda sin rayar.",
         aplicacion: "1. Rociar desengrasante o APC sobre la llanta y neumático.\n2. Cepillar enérgicamente las caras de la cubierta y los huecos de la llanta.\n3. Enjuagar el cepillo y las ruedas con agua a presión."
     },
-
     "Combo Exterior Básico": {
         uso: "Kit esencial desarrollado para realizar un lavado exterior completo y seguro. Su fórmula de pH neutro remueve la suciedad vial sin dañar ni barrer ceras o selladores previos, cuidando la pintura.",
         aplicacion: "1. Diluir el Shampoo pH Neutro en un balde con agua limpia hasta generar abundante espuma.\n2. Lavar la carrocería de arriba hacia abajo utilizando la Esponja Dual de microfibra.\n3. Usar el Cepillo de mango corto junto con espuma para limpiar a fondo llantas y neumáticos.\n4. Enjuagar con agua a presión y secar la superficie deslizando el Paño de secado sin hacer presión."
     },
-
     "Combo Interior Premium": {
         uso: "Kit completo de restauración y detallado de habitáculo. Elimina manchas, suciedad pegada y malos olores, dejando plásticos y torpedos con aspecto a nuevo y protegidos.",
         aplicacion: "1. Pulverizar el APC sobre superficies o cepillo para remover la suciedad pegada en plásticos y telas.\n2. Retirar los restos con una microfibra húmeda.\n3. Acondicionar los plásticos secos aplicando la Silicona con los Pads de poliespuma.\n4. Finalizar aplicando el Aromatizante sobre las alfombras para un ambiente limpio y fresco."
     },
-
     "Combo Brillo y Protección": {
         uso: "Combo rápido de encerado y acabado espejo. Crea una capa protectora contra el polvo, rayos solares y lluvia, dejando un tacto sedoso y brillo profundo en la pintura.",
         aplicacion: "1. Asegurarse de que el vehículo esté lavado y bien seco a la sombra.\n2. Aplicar una capa fina de Cera Autobrillo sobre la carrocería.\n3. Dejar secar unos minutos hasta que tome un tono brumoso.\n4. Lustrar con una cara de las Microfibras hasta obtener brillo espejo."
     },
-
     "Combo Full Detailing": {
         uso: "El kit definitivo para los apasionados del car care. Incluye los 10 productos indispensables para lavar, restaurar, proteger y mantener el vehículo impecable por dentro y por fuera.",
         aplicacion: "1. Lavar exteriormente con Shampoo pH Neutro, Esponja Dual y cepillo de ruedas.\n2. Secar con paño Waffle sin rayar la pintura.\n3. Aplicar Cera protectora con Foam Applicator y lustrar con microfibra.\n4. Limpiar interior con APC, acondicionar plásticos con Silicona y perfumar con Aromatizante."
@@ -723,3 +704,6 @@ if (detalleAgregar) {
         alert("Buscá el producto en el catálogo para agregarlo al carrito.");
     });
 }
+
+mostrarProductos();
+actualizarCarrito();
