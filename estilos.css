@@ -1328,71 +1328,63 @@ body.modal-producto-abierto {
         max-width: 100% !important;
     }
 }
-/* --- DISEÑO MÓVIL: TARJETAS MÁS ANCHAS Y COMPACTAS ("GORDITAS") --- */
+/* --- DISEÑO MÓVIL: TARJETAS ANCHAS Y GORDITAS --- */
 @media (max-width: 768px) {
-    /* MÁRGENES MÍNIMOS EN LA PANTALLA */
-    body {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    /* GRILLA: Menos espacio entre tarjetas y bordes casi pegados al celular */
-    .grilla-productos, .productos-grid, .grid-productos, .combos-grid {
+    /* 1. Grilla pegada a los bordes de la pantalla del celular */
+    .grilla-productos {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 6px !important;            /* Achica el espacio entre las 2 tarjetas */
-        padding: 4px !important;          /* Achica los bordes laterales del celular */
+        gap: 8px !important;
+        padding: 0 6px !important;
     }
 
-    /* TARJETA: Más ancha, menos alta y rellenos compactos */
-    .tarjeta-producto, .card {
-        padding: 8px 6px !important;    /* Menos espacio blanco adentro */
+    /* 2. Estilo de cada tarjeta generada por JS para que sea compacta y ancha */
+    .grilla-productos > div, 
+    .tarjeta-producto {
+        background-color: #111 !important;
+        border: 1px solid #222 !important;
+        border-radius: 8px !important;
+        padding: 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
         margin-bottom: 0 !important;
     }
 
-    /* FOTO DEL PRODUCTO: Achicamos la altura para que la tarjeta sea más petisa */
-    .tarjeta-producto img, .card img {
-        height: 95px !important;        /* Antes estaba alta, ahora la hacemos petisa */
+    /* 3. Imagen de los productos más petisa (baja) para que no se alargue */
+    .grilla-productos img, 
+    .tarjeta-producto img {
+        height: 90px !important;
         object-fit: contain !important;
-        margin-bottom: 4px !important;
+        width: 100% !important;
+        margin-bottom: 6px !important;
     }
 
-    /* TÍTULOS Y TEXTOS COMPACTOS */
-    .tarjeta-producto h3, .card h3 {
-        font-size: 0.82rem !important;
+    /* 4. Títulos y textos más chicos para que entren bien */
+    .grilla-productos h3, 
+    .tarjeta-producto h3 {
+        font-size: 0.8rem !important;
         line-height: 1.1 !important;
         margin: 4px 0 !important;
     }
 
-    .tarjeta-producto p, .card p {
-        font-size: 0.72rem !important;
+    .grilla-productos p, 
+    .tarjeta-producto p {
+        font-size: 0.7rem !important;
         margin-bottom: 4px !important;
     }
 
-    /* PRECIO Y BOTONES APROVECHANDO TODO EL ANCHO DE LA TARJETA */
-    .tarjeta-producto .precio, .card .precio {
-        font-size: 0.95rem !important;
+    /* 5. Precios y botones ocupando todo el ancho */
+    .grilla-productos .precio, 
+    .tarjeta-producto .precio {
+        font-size: 0.9rem !important;
         margin: 4px 0 !important;
     }
 
-    .tarjeta-producto button, .card button {
+    .grilla-productos button, 
+    .tarjeta-producto button {
         padding: 6px 2px !important;
-        font-size: 0.75rem !important;
-        width: 100% !important;         /* Estira los botones para que ocupen todo el ancho */
-    }
-
-    /* MENU Y ENCABEZADO MÁS FINITOS */
-    header {
-        padding: 4px !important;
-    }
-
-    nav ul {
-        gap: 6px !important;
-        font-size: 0.7rem !important;
-    }
-
-    .btn-carrito, #btn-carrito {
-        padding: 3px 8px !important;
-        font-size: 0.75rem !important;
+        font-size: 0.72rem !important;
+        width: 100% !important;
     }
 }
