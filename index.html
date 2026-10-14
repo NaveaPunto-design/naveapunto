@@ -12,56 +12,71 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="estilos.css">
+
+    <!-- ESTILO FORZADO PARA MÓVIL: TARJETAS ANCHAS, GORDITAS Y PORTADA ARREGLADA -->
     <style>
-    <style>
-    /* --- DISEÑO MÓVIL: TARJETAS BIEN ANCHAS Y FOTO DE PORTADA ARREGLADA --- */
-    @media (max-width: 768px) {
-        /* 1. TARJETAS MÁS ANCHAS: Reducimos el espacio entre columnas a 4px y eliminamos márgenes laterales */
-        .grilla-productos, #grilla-productos {
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 4px !important;
-            padding: 2px !important;
-            width: 100% !important;
-        }
+        @media (max-width: 768px) {
+            .grilla-productos, #grilla-productos {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 4px !important;
+                padding: 2px !important;
+                width: 100% !important;
+            }
 
-        .grilla-productos > *, #grilla-productos > * {
-            background-color: #111 !important;
-            border: 1px solid #222 !important;
-            border-radius: 6px !important;
-            padding: 6px 4px !important;
-            margin: 0 !important;
-            width: 100% !important;
-        }
+            .grilla-productos > *, #grilla-productos > * {
+                background-color: #111 !important;
+                border: 1px solid #222 !important;
+                border-radius: 6px !important;
+                padding: 6px 4px !important;
+                margin: 0 !important;
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+            }
 
-        /* 2. IMÁGENES DE PRODUCTOS MÁS PETISAS Y PROLIJAS */
-        .grilla-productos img, #grilla-productos img {
-            height: 85px !important;
-            object-fit: contain !important;
-            width: 100% !important;
-            margin-bottom: 4px !important;
-        }
+            .grilla-productos img, #grilla-productos img {
+                height: 85px !important;
+                object-fit: contain !important;
+                width: 100% !important;
+                margin-bottom: 4px !important;
+            }
 
-        /* 3. ARREGLAR LA FOTO / SECCIÓN DE PORTADA (EL AUTO DE FONDO) QUE SE VE TORCIDA */
-        .portada, .seccion-portada, [id*="inicio"] {
-            background-size: cover !important;
-            background-position: center center !important;
-            height: auto !important;
-            min-height: 350px !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
-            padding: 20px 10px !important;
-        }
+            .grilla-productos h3, #grilla-productos h3 {
+                font-size: 0.8rem !important;
+                margin: 4px 0 !important;
+            }
 
-        .portada-contenido {
-            width: 100% !important;
-            max-width: 100% !important;
-            text-align: center !important;
+            .grilla-productos p, #grilla-productos p {
+                font-size: 0.7rem !important;
+                margin-bottom: 4px !important;
+            }
+
+            .grilla-productos button, #grilla-productos button {
+                padding: 6px 2px !important;
+                font-size: 0.72rem !important;
+                width: 100% !important;
+            }
+
+            .portada, .seccion-portada, [id*="inicio"] {
+                background-size: cover !important;
+                background-position: center center !important;
+                height: auto !important;
+                min-height: 350px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                padding: 20px 10px !important;
+            }
+
+            .portada-contenido {
+                width: 100% !important;
+                max-width: 100% !important;
+                text-align: center !important;
+            }
         }
-    }
-</style>
-</style>
+    </style>
 </head>
 
 <body>
