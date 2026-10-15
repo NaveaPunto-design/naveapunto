@@ -24,9 +24,6 @@ let busquedaActual = "";
 
 const grilla = document.getElementById("grilla-productos");
 const contadorCarrito = document.getElementById("cantidad-carrito");
-const fondoCarrito = document.getElementById("fondo-carrito");
-const botonAbrirCarrito = document.getElementById("abrir-carrito");
-const botonCerrarCarrito = document.getElementById("cerrar-carrito");
 const listaCarrito = document.getElementById("items-carrito");
 const totalCarrito = document.getElementById("total-carrito");
 const botonFinalizar = document.getElementById("finalizar-compra");
@@ -51,7 +48,7 @@ function mostrarProductos() {
     });
 
     if (filtrados.length === 0) {
-        grilla.innerHTML = `<p class="sin-productos" style="color:white; text-align:center; padding:20px;">No encontramos productos con esa búsqueda.</p>`;
+        grilla.innerHTML = `<div class="col-12 text-center py-4"><p class="text-secondary">No encontramos productos con esa búsqueda.</p></div>`;
         return;
     }
 
@@ -59,24 +56,30 @@ function mostrarProductos() {
         const disp = prod.stock - cantidadEnCarrito(prod.id);
         const ag = disp <= 0;
         return `
-            <article class="tarjeta-producto" data-aos="fade-up">
-                ${prod.esCombo ? '<span class="badge-combo">COMBO TOP</span>' : ''}
-                <div class="producto-imagen">
-                    <img src="${prod.imagen}" alt="${prod.nombre}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x600/101722/f7faff?text=NaveaPunto';">
-                    <span class="etiqueta-marca">${prod.marca}</span>
-                </div>
-                <div class="producto-info">
-                    <p class="producto-categoria">${prod.categoria}</p>
-                    <h3>${prod.nombre}</h3>
-                    <p class="producto-descripcion">${prod.descripcion}</p>
-                    <button class="boton-ver-detalles" type="button" data-detalles="${prod.nombre}">VER DETALLES</button>
-                    <div class="producto-pie">
-                        <div class="producto-precio">${formatoPrecio(prod.precio)}</div>
-                        <span class="producto-stock ${ag ? "stock-agotado" : ""}">${ag ? "Sin stock" : `${disp}${disp === 1 ? "unidad" : "unidades"} disponibles`}</span>
+            <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+                <div class="card bg-dark text-white border-secondary w-100 shadow-sm position-relative d-flex flex-column justify-content-between p-2">
+                    ${prod.esCombo ? '<span class="position-absolute top-0 start-0 badge bg-danger m-2">COMBO TOP</span>' : ''}
+                    <div>
+                        <div class="text-center bg-black p-2 rounded mb-2">
+                            <img src="${prod.imagen}" alt="${prod.nombre}" class="img-fluid" style="height: 100px; object-fit: contain;">
+                        </div>
+                        <span class="badge bg-outline-light border border-secondary text-secondary small mb-1">${prod.marca}</span>
+                        <h6 class="card-title text-white mb-1 fs-6 fw-bold text-truncate">${prod.nombre}</h6>
+                        <p class="card-text text-secondary small mb-2 text-truncate">${prod.descripcion}</p>
                     </div>
-                    <button class="boton-agregar" data-agregar="${prod.id}" ${ag ? "disabled" : ""}>${ag ? "Sin stock" : "Agregar al carrito"}</button>
+
+                    <div>
+                        <button class="btn btn-outline-info btn-sm w-100 mb-2 py-1 small" onclick="abrirDetallesModal('${prod.nombre}')">Ver detalles</button>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="fw-bold text-white">${formatoPrecio(prod.precio)}</span>
+                            <small class="text-${ag ? 'danger' : 'secondary'} small">${ag ? 'Agotado' : `${disp} disp.`}</small>
+                        </div>
+                        <button class="btn btn-danger btn-sm w-100 fw-bold py-1" onclick="agregarAlCarrito(${prod.id})" ${ag ? 'disabled' : ''}>
+                            ${ag ? 'Sin stock' : 'Agregar 🛒'}
+                        </button>
+                    </div>
                 </div>
-            </article>
+            </div>
         `;
     }).join("");
 }
@@ -87,23 +90,23 @@ function actualizarCarrito() {
     contadorCarrito.textContent = totalCant;
 
     if (carrito.length === 0) {
-        listaCarrito.innerHTML = `<p class="carrito-vacio">Tu carrito está vacío.</p>`;
+        listaCarrito.innerHTML = `<p class="text-secondary text-center my-4">Tu carrito está vacío.</p>`;
     } else {
         listaCarrito.innerHTML = carrito.map(item => {
             const prod = obtenerProducto(item.id);
             if (!prod) return "";
             return `
-                <div class="item-carrito">
-                    <img src="${prod.imagen}" alt="${prod.nombre}">
-                    <div class="item-carrito-info">
-                        <h4>${prod.nombre}</h4>
-                        <p>${formatoPrecio(prod.precio)}</p>
-                        <div class="cantidad-controles">
-                            <button data-cambiar="${prod.id}" data-delta="-1">−</button>
-                            <span>${item.cantidad}</span>
-                            <button data-cambiar="${prod.id}" data-delta="1" ${item.cantidad >= prod.stock ? "disabled" : ""}>+</button>
-                        </div>
-                        <button class="quitar-producto" data-quitar="${prod.id}">Quitar</button>
+                <div class="d-flex align-items-center justify-content-between bg-dark p-2 rounded mb-2 border border-secondary">
+                    <img src="${prod.imagen}" alt="${prod.nombre}" style="width: 45px; height: 45px; object-fit: contain;" class="bg-black rounded me-2">
+                    <div class="flex-grow-1">
+                        <h6 class="mb-0 text-white small fw-bold text-truncate" style="max-width: 120px;">${prod.nombre}</h6>
+                        <small class="text-danger fw-bold">${formatoPrecio(prod.precio)}</small>
+                    </div>
+                    <div class="d-flex align-items-center gap-1">
+                        <button class="btn btn-sm btn-outline-light py-0 px-2" onclick="cambiarCantidad(${prod.id}, -1)">-</button>
+                        <span class="small fw-bold px-1">${item.cantidad}</span>
+                        <button class="btn btn-sm btn-outline-light py-0 px-2" onclick="cambiarCantidad(${prod.id}, 1)" ${item.cantidad >= prod.stock ? 'disabled' : ''}>+</button>
+                        <button class="btn btn-sm btn-outline-danger py-0 px-1 ms-1" onclick="quitarDelCarrito(${prod.id})">✕</button>
                     </div>
                 </div>
             `;
@@ -118,7 +121,6 @@ function actualizarCarrito() {
     totalCarrito.textContent = formatoPrecio(totalVal);
     if (botonFinalizar) {
         botonFinalizar.disabled = carrito.length === 0;
-        botonFinalizar.textContent = "Consultar y pedir por WhatsApp";
     }
     mostrarProductos();
 }
@@ -128,13 +130,26 @@ function agregarAlCarrito(id) {
     if (!prod) return;
     const ext = carrito.find(i => i.id === prod.id);
     if (ext) {
-        if (ext.cantidad >= prod.stock) { alert("Stock máximo alcanzado."); return; }
+        if (ext.cantidad >= prod.stock) { return; }
         ext.cantidad++;
     } else {
-        if (prod.stock < 1) { alert("Sin stock."); return; }
+        if (prod.stock < 1) { return; }
         carrito.push({ id: prod.id, cantidad: 1 });
     }
     actualizarCarrito();
+
+    // Notificación Toast
+    const toastTitulo = document.getElementById('toast-titulo');
+    const toastSubtitulo = document.getElementById('toast-subtitulo');
+    if (toastTitulo && toastSubtitulo) {
+        toastTitulo.innerText = prod.nombre;
+        toastSubtitulo.innerText = '¡Agregado al carrito de compras!';
+        const toastElement = document.getElementById('toast-carrito');
+        if (toastElement) {
+            const toast = new bootstrap.Toast(toastElement);
+            toast.show();
+        }
+    }
 }
 
 function cambiarCantidad(id, delta) {
@@ -155,30 +170,21 @@ function quitarDelCarrito(id) {
     actualizarCarrito();
 }
 
-if (grilla) {
-    grilla.addEventListener("click", e => {
-        const btn = e.target.closest("[data-agregar]");
-        if (btn) agregarAlCarrito(btn.dataset.agregar);
-    });
-}
-
-if (listaCarrito) {
-    listaCarrito.addEventListener("click", e => {
-        const camb = e.target.closest("[data-cambiar]");
-        const quit = e.target.closest("[data-quitar]");
-        if (camb) cambiarCantidad(camb.dataset.cambiar, Number(camb.dataset.delta));
-        if (quit) quitarDelCarrito(quit.dataset.quitar);
-    });
-}
-
-document.querySelectorAll("[data-categoria]").forEach(btn => {
+// Filtros por categoría
+document.querySelectorAll(".filtro-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         categoriaActual = btn.dataset.categoria;
-        document.querySelectorAll("[data-categoria]").forEach(o => o.classList.toggle("activo", o === btn));
+        document.querySelectorAll(".filtro-btn").forEach(o => {
+            o.classList.remove("btn-danger");
+            o.classList.add("btn-outline-light");
+        });
+        btn.classList.remove("btn-outline-light");
+        btn.classList.add("btn-danger");
         mostrarProductos();
     });
 });
 
+// Buscador
 const busq = document.getElementById("buscar-productos");
 if (busq) {
     busq.addEventListener("input", () => {
@@ -187,10 +193,7 @@ if (busq) {
     });
 }
 
-if (botonAbrirCarrito) botonAbrirCarrito.addEventListener("click", () => fondoCarrito?.classList.add("abierto"));
-if (botonCerrarCarrito) botonCerrarCarrito.addEventListener("click", () => fondoCarrito?.classList.remove("abierto"));
-if (fondoCarrito) fondoCarrito.addEventListener("click", e => { if (e.target === fondoCarrito) fondoCarrito.classList.remove("abierto"); });
-
+// Pedido WhatsApp
 if (botonFinalizar) {
     botonFinalizar.addEventListener("click", () => {
         if (carrito.length === 0) return;
@@ -199,14 +202,15 @@ if (botonFinalizar) {
             return `• ${p.nombre} x${i.cantidad} — ${formatoPrecio(p.precio * i.cantidad)}`;
         });
         const totalVal = carrito.reduce((s, i) => s + (obtenerProducto(i.id).precio * i.cantidad), 0);
-        const msg = ["¡Hola, NaveaPunto! Quiero este pedido:", "", ...lineas, "", `Total: ${formatoPrecio(totalVal)}`, "", "¿Me confirman cómo seguimos?"].join("\n");
+        const msg = ["¡Hola, NaveaPunto! Quiero encargar este pedido:", "", ...lineas, "", `Total: ${formatoPrecio(totalVal)}`, "", "¿Me confirman cómo seguimos?"].join("\n");
         window.open(`https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(msg)}`, "_blank");
     });
 }
 
+// Fichas técnicas profesionales
 const detallesProductos = {
-    "Sport Car Essence": { uso: "Fragancia concentrada para eliminar malos olores y ambientar el habitáculo.", aplicacion: "1. Agitar.\n2. Rocear a 20-30 cm sobre alfombras o debajo de asientos." },
-    "Silicona para interiores": { uso: "Acondicionador de plásticos y vinilos que restaura el color y protege contra rayos UV.", aplicacion: "1. Limpiar el polvo.\n2. Aplicar con pad de poliespuma.\n3. Repasar con microfibra seca." },
+    "Sport Car Essence": { uso: "Fragancia concentrada para eliminar malos olores y ambientar el habitáculo.", aplicacion: "1. Agitar antes de usar.\n2. Rociar a 20-30 cm sobre alfombras o debajo de los asientos." },
+    "Silicona para interiores": { uso: "Acondicionador de plásticos y vinilos que restaura el color y protege contra rayos UV.", aplicacion: "1. Limpiar el polvo previamente.\n2. Aplicar con pad de poliespuma.\n3. Repasar con microfibra seca." },
     "Car Wash PH Neutro": { uso: "Shampoo de alta espuma y pH neutro que no barre ceras ni selladores.", aplicacion: "1. Diluir 30-50 ml en 10 litros de agua.\n2. Lavar de arriba hacia abajo y enjuagar." },
     "APC All Purpose": { uso: "Limpiador multipropósito desengrasante para plásticos, motor y manchas.", aplicacion: "1. Diluir según suciedad (1:10 o 1:5).\n2. Pulverizar, cepillar y retirar con microfibra húmeda." },
     "Car Wax": { uso: "Cera protectora que intensifica el brillo y repele agua y polvo.", aplicacion: "1. Con auto seco y a la sombra, aplicar capa fina con espuma.\n2. Lustrar con microfibra limpia." },
@@ -221,67 +225,33 @@ const detallesProductos = {
     "Combo Full Detailing": { uso: "Kit definitivo para el cuidado total interior y exterior del vehículo.", aplicacion: "1. Lavar exterior y secar.\n2. Encerar carrocería.\n3. Limpiar y acondicionar interiores." }
 };
 
-const modalProducto = document.getElementById("modal-producto");
-const detalleImagen = document.getElementById("detalle-imagen");
-const detalleMarca = document.getElementById("detalle-marca");
-const detalleCategoria = document.getElementById("detalle-categoria");
-const detalleNombre = document.getElementById("detalle-nombre");
-const detalleDescripcion = document.getElementById("detalle-descripcion");
-const detalleUso = document.getElementById("detalle-uso");
-const detalleAplicacion = document.getElementById("detalle-aplicacion");
-const detallePrecio = document.getElementById("detalle-precio");
-const detalleStock = document.getElementById("detalle-stock");
-const detalleAgregar = document.getElementById("detalle-agregar");
-let productoDetalleActual = null;
-
-function abrirDetallesProducto(nombre) {
+function abrirDetallesModal(nombre) {
     const prod = productos.find(i => i.nombre === nombre);
-    if (!prod || !modalProducto) return;
-    productoDetalleActual = prod;
+    if (!prod) return;
     const ext = detallesProductos[prod.nombre] || { uso: "Consultar envase.", aplicacion: "Seguir instrucciones." };
 
-    detalleNombre.textContent = prod.nombre;
-    detalleMarca.textContent = prod.marca || "Nave a Punto";
-    detalleCategoria.textContent = prod.categoria || "";
-    detalleDescripcion.textContent = prod.descripcion || "";
-    detalleUso.textContent = ext.uso;
-    detalleAplicacion.textContent = ext.aplicacion;
-    detalleImagen.src = prod.imagen || "";
-    detalleImagen.alt = prod.nombre;
-    detallePrecio.textContent = formatoPrecio(prod.precio);
-    detalleStock.textContent = `Stock disponible: ${prod.stock} ${prod.stock === 1 ? "unidad" : "unidades"}`;
-    detalleAgregar.disabled = prod.stock <= 0;
-    detalleAgregar.textContent = prod.stock <= 0 ? "SIN STOCK" : "AGREGAR AL CARRITO";
+    document.getElementById("detalle-nombre").textContent = prod.nombre;
+    document.getElementById("detalle-marca").textContent = prod.marca || "K78";
+    document.getElementById("detalle-categoria").textContent = prod.categoria || "";
+    document.getElementById("detalle-descripcion").textContent = prod.descripcion || "";
+    document.getElementById("detalle-uso").textContent = ext.uso;
+    document.getElementById("detalle-aplicacion").textContent = ext.aplicacion;
+    document.getElementById("detalle-imagen").src = prod.imagen || "";
+    document.getElementById("detalle-precio").textContent = formatoPrecio(prod.precio);
+    document.getElementById("detalle-stock").textContent = `Stock disponible: ${prod.stock} ${prod.stock === 1 ? 'unidad' : 'unidades'}`;
+    
+    const btnAgregar = document.getElementById("detalle-agregar");
+    btnAgregar.disabled = prod.stock <= 0;
+    btnAgregar.onclick = () => {
+        agregarAlCarrito(prod.id);
+        const modalEl = document.getElementById('modalProducto');
+        const modal = bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+    };
 
-    modalProducto.classList.add("abierto");
-    modalProducto.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-producto-abierto");
-}
-
-function cerrarDetallesProducto() {
-    if (!modalProducto) return;
-    modalProducto.classList.remove("abierto");
-    modalProducto.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-producto-abierto");
-}
-
-if (grilla) {
-    grilla.addEventListener("click", e => {
-        const btn = e.target.closest("[data-detalles]");
-        if (btn) abrirDetallesProducto(btn.dataset.detalles);
-    });
-}
-
-document.getElementById("cerrar-modal-producto")?.addEventListener("click", cerrarDetallesProducto);
-document.getElementById("cerrar-modal-fondo")?.addEventListener("click", cerrarDetallesProducto);
-document.addEventListener("keydown", e => { if (e.key === "Escape") cerrarDetallesProducto(); });
-
-if (detalleAgregar) {
-    detalleAgregar.addEventListener("click", () => {
-        if (!productoDetalleActual) return;
-        const btn = document.querySelector(`[data-agregar="${productoDetalleActual.id}"]`);
-        if (btn) { btn.click(); cerrarDetallesProducto(); }
-    });
+    const modalEl = document.getElementById('modalProducto');
+    const modal = new bootstrap.Modal(modalEl);
+    modal.show();
 }
 
 mostrarProductos();
