@@ -1433,3 +1433,20 @@ body.modal-producto-abierto {
         font-size: 1.5rem !important;
     }
 }
+/* Agrandar el texto 'Nave a Punto' y la frase en celulares */
+@media (max-width: 768px) {
+    .portada-decoracion span {
+        font-size: 2.2rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 1px !important;
+        display: block !important;
+        margin-bottom: 6px !important;
+    }
+
+    .portada-decoracion p {
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.5px !important;
+        opacity: 0.9 !important;
+    }
+}
