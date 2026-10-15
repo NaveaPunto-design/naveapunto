@@ -1,4 +1,4 @@
-// LISTA DE PRODUCTOS
+// LISTA DE PRODUCTOS Y COMBOS OFICIALES
 let productos = [
     {
         id: 1,
@@ -403,34 +403,33 @@ if (finalizarCompra) {
         mensaje += `\n*TOTAL: $${total.toLocaleString("es-AR")}*`;
         mensaje += "\n\n¿Tienen disponibilidad para coordinar la entrega?";
 
-        const telefono = "5491112345678"; // Reemplazar con tu número real de WhatsApp
+        const telefono = "5491112345678";
         const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
         window.open(url, "_blank");
     });
 }
 
 // ABRIR Y CERRAR CARRITO
-if (abrirCarrito) {
-    abrirCarrito.addEventListener("click", () => {
-        fondoCarrito.classList.add("abierto");
-    });
+function alternarCarrito(abrir) {
+    if (!fondoCarrito) return;
+    if (abrir) {
+        fondoCarrito.classList.add("abierto", "activo");
+        document.body.classList.add("carrito-abierto");
+    } else {
+        fondoCarrito.classList.remove("abierto", "activo");
+        document.body.classList.remove("carrito-abierto");
+    }
 }
 
-if (cerrarCarrito) {
-    cerrarCarrito.addEventListener("click", () => {
-        fondoCarrito.classList.remove("abierto");
-    });
-}
-
+if (abrirCarrito) abrirCarrito.addEventListener("click", () => alternarCarrito(true));
+if (cerrarCarrito) cerrarCarrito.addEventListener("click", () => alternarCarrito(false));
 if (fondoCarrito) {
     fondoCarrito.addEventListener("click", (e) => {
-        if (e.target === fondoCarrito) {
-            fondoCarrito.classList.remove("abierto");
-        }
+        if (e.target === fondoCarrito) alternarCarrito(false);
     });
 }
 
-// INICIALIZAR DIRECTO AL CARGAR LA PÁGINA
+// INICIALIZAR
 mostrarProductos(productos);
 actualizarCarrito();
 if (typeof AOS !== "undefined") {
