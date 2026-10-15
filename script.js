@@ -1,4 +1,4 @@
-// LISTA DIRECTA DE PRODUCTOS (Para evitar errores de carga de JSON)
+// LISTA DE PRODUCTOS
 let productos = [
     {
         id: 1,
@@ -431,11 +431,9 @@ if (fondoCarrito) {
     });
 }
 
-// INICIALIZAR
-document.addEventListener("DOMContentLoaded", () => {
-    mostrarProductos(productos);
-    actualizarCarrito();
-    if (typeof AOS !== "undefined") {
-        AOS.init({ duration: 800, once: true });
-    }
-});
+// INICIALIZAR DIRECTO AL CARGAR LA PÁGINA
+mostrarProductos(productos);
+actualizarCarrito();
+if (typeof AOS !== "undefined") {
+    AOS.init({ duration: 800, once: true });
+}
