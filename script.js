@@ -43,7 +43,7 @@ let productos = [
         categoria: "interior",
         precio: 12200,
         disponibles: 6,
-        imagen: " descargar",
+        imagen: "cilicona.jpeg.jpeg",
         descripcion: "Silicona aromatizada ideal (código 202) para restaurar el brillo y proteger plásticos y tableros.",
         uso: "Protección y brillo de plásticos interiores[cite: 9].",
         aplicacion: "Aplicar con un paño de microfibra limpio y dejar secar."
@@ -67,7 +67,7 @@ let productos = [
         categoria: "accesorios",
         precio: 6000,
         disponibles: 6,
-        imagen: "WhatsApp Image 2026-10-15 at 5.52.10 PM_2.jpeg",
+        imagen: "esponjamicrofibraindividual.jpeg.jpeg",
         descripcion: "Esponja de microfibra (código 606) de doble acción para un lavado seguro sin rayas.",
         uso: "Lavado general y remoción de suciedad[cite: 10].",
         aplicacion: "Usar con abundante shampoo diluido."
@@ -91,7 +91,7 @@ let productos = [
         categoria: "microfibras",
         precio: 4800,
         disponibles: 6,
-        imagen: "paño secado",
+        imagen: "paño secado desgargar",
         descripcion: "Pack de 3 paños de microfibra multiuso (código 614).",
         uso: "Limpieza de interiores, ceras y detalles[cite: 8].",
         aplicacion: "Utilizar limpia y seca o con productos específicos."
