@@ -19,7 +19,7 @@ let productos = [
         categoria: "aromatizantes",
         precio: 3700,
         disponibles: 8,
-        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM_2.jpeg",
+        imagen: " hhhhhhhhhyayaya",
         descripcion: "Aromatizante ambiental (código 106) de alta duración con fragancia Sport Car Essence.",
         uso: "Perfumar el habitáculo del vehículo[cite: 9].",
         aplicacion: "Pulverizar en las alfombras o zonas textiles manteniendo distancia."
@@ -154,7 +154,7 @@ let productos = [
         categoria: "proteccion",
         precio: 10900,
         disponibles: 5,
-        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM (1)_2.jpeg",
+        imagen: "cera.jpeg.jpeg",
         esCombo: true,
         descripcion: "Cera Autobrillo + Paño microfibra x3.",
         uso: "Kit diseñado para lograr un acabado espejo profesional y una alta protección duradera sobre la laca[cite: 8].",
