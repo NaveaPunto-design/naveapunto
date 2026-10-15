@@ -1445,19 +1445,21 @@ body.modal-producto-abierto {
     border-color: #e32636 !important;
     background: rgba(227, 38, 54, 0.07) !important;
 }
-/* CORRECCIÓN DEFINITIVA DE TAMAÑO DE IMAGEN EN PC */
-.tarjeta-producto img {
+/* CORRECCIÓN FINAL PARA CONTENER LAS IMÁGENES EN PC Y CELULAR */
+.tarjeta-producto .producto-imagen {
     width: 100% !important;
-    height: 150px !important;
-    max-height: 150px !important;
-    object-fit: contain !important;
-    background-color: #0b0f17 !important;
-    padding: 10px !important;
+    height: 180px !important;
+    max-height: 180px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #101010 !important;
 }
 
-.tarjeta-producto {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-}
+.tarjeta-producto .producto-imagen img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    padding: 12px !important;
 }
