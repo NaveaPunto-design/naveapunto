@@ -1,5 +1,115 @@
-// VARIABLES GLOBALES
-let productos = [];
+// LISTA DIRECTA DE PRODUCTOS (Para evitar errores de carga de JSON)
+let productos = [
+    {
+        id: 1,
+        nombre: "Aromatiz. Ambiental Sport Car Essence",
+        marca: "K78",
+        categoria: "aromatizantes",
+        precio: 3250,
+        disponibles: 8,
+        imagen: "logo.jpeg",
+        descripcion: "Aromatizante ambiental de alta duración con fragancia Sport Car Essence.",
+        uso: "Perfumar el habitáculo del vehículo.",
+        aplicacion: "Pulverizar en las alfombras o zonas textiles manteniendo distancia."
+    },
+    {
+        id: 2,
+        nombre: "Silicona Aromatiz. Para interior, plast. y alfombras",
+        marca: "K78",
+        categoria: "interior",
+        precio: 6000,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Silicona aromatizada ideal para restaurar el brillo y proteger plásticos y tableros.",
+        uso: "Protección y brillo de plásticos interiores.",
+        aplicacion: "Aplicar con un paño de microfibra limpio y dejar secar."
+    },
+    {
+        id: 3,
+        nombre: "Car Wash - Lava autos PH Neutro",
+        marca: "K78",
+        categoria: "lavado",
+        precio: 5500,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Shampoo con PH neutro que limpia sin dañar tratamientos previos ni ceras.",
+        uso: "Lavado exterior seguro de la carrocería.",
+        aplicacion: "Diluir en agua según instrucciones, lavar con guante de microfibra y enjuagar."
+    },
+    {
+        id: 4,
+        nombre: "APC- ALL PURPOSE - Limpiador Multiproposito",
+        marca: "K78",
+        categoria: "limpieza",
+        precio: 6800,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Limpiador multipropósito de alta eficiencia para eliminar suciedad difícil.",
+        uso: "Limpieza profunda de interiores, paneles y llantas.",
+        aplicacion: "Pulverizar sobre la superficie, remover con cepillo o pincel y retirar con microfibra."
+    },
+    {
+        id: 5,
+        nombre: "Car Wax Cera Auto.",
+        marca: "K78",
+        categoria: "proteccion",
+        precio: 12200,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Cera automotriz de gran durabilidad que otorga un brillo extremo y protección.",
+        uso: "Protección de la laca y acabado espejo.",
+        aplicacion: "Aplicar en secciones, dejar secar unos minutos y lustrar con microfibra."
+    },
+    {
+        id: 6,
+        nombre: "Microfibra Secado - Tipo Waffle",
+        marca: "K78",
+        categoria: "microfibras",
+        precio: 3700,
+        disponibles: 8,
+        imagen: "logo.jpeg",
+        descripcion: "Paño de secado en formato waffle diseñado para no dejar marcas ni rayas.",
+        uso: "Secado rápido y seguro de vidrios y carrocería.",
+        aplicacion: "Deslizar suavemente sobre la superficie húmeda sin hacer presión excesiva."
+    },
+    {
+        id: 7,
+        nombre: "Esponja Microfibra Dual",
+        marca: "K78",
+        categoria: "accesorios",
+        precio: 4500,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Esponja revestida en microfibra de doble acción para un lavado seguro.",
+        uso: "Lavado general y remoción de insectos.",
+        aplicacion: "Usar con abundante shampoo diluido."
+    },
+    {
+        id: 8,
+        nombre: "Pack 3 unid. - Microfibra Multi.",
+        marca: "K78",
+        categoria: "microfibras",
+        precio: 7500,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Pack de 3 microfibras multiuso de diferentes colores para evitar contaminación cruzada.",
+        uso: "Limpieza de interiores, ceras y detalles.",
+        aplicacion: "Utilizar limpia y seca o con productos específicos."
+    },
+    {
+        id: 9,
+        nombre: "Wheel & Tire Brush - Cepillo Ruedas y Llantas",
+        marca: "K78",
+        categoria: "accesorios",
+        precio: 5900,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Cepillo especializado para llegar a los rincones más difíciles de llantas y cubiertas.",
+        uso: "Limpieza de llantas y neumáticos.",
+        aplicacion: "Utilizar junto con el limpiador APC o shampoo."
+    }
+];
+
 let carrito = JSON.parse(localStorage.getItem("carrito_naveapunto")) || [];
 let categoriaActual = "todos";
 
@@ -32,18 +142,6 @@ const detalleAgregar = document.getElementById("detalle-agregar");
 
 let productoSeleccionadoActual = null;
 
-// CARGAR PRODUCTOS DESDE EL JSON
-async function cargarProductos() {
-    try {
-        const respuesta = await fetch("productos.json");
-        productos = await respuesta.json();
-        mostrarProductos(productos);
-        actualizarCarrito();
-    } catch (error) {
-        console.error("Error al cargar los productos:", error);
-    }
-}
-
 // MOSTRAR PRODUCTOS EN LA GRILLA
 function mostrarProductos(lista) {
     if (!grillaProductos) return;
@@ -61,7 +159,6 @@ function mostrarProductos(lista) {
         const disponibles = Number(p.disponibles ?? 0);
         const agotado = disponibles <= 0;
 
-        // Formato prolijo para las unidades disponibles con espacio correcto
         const textoStock = agotado
             ? "Sin unidades disponibles"
             : `${disponibles} ${disponibles === 1 ? "unidad disponible" : "unidades disponibles"}`;
@@ -336,7 +433,8 @@ if (fondoCarrito) {
 
 // INICIALIZAR
 document.addEventListener("DOMContentLoaded", () => {
-    cargarProductos();
+    mostrarProductos(productos);
+    actualizarCarrito();
     if (typeof AOS !== "undefined") {
         AOS.init({ duration: 800, once: true });
     }
