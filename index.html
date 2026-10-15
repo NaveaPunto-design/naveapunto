@@ -3,244 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>NaveaPunto | Detailing Store</title>
     <meta name="description" content="Productos de detailing y cuidado automotor. Encontrá tus marcas favoritas en NaveaPunto.">
 
-    <!-- BOOTSTRAP 5 CSS -->
+    <!-- BOOTSTRAP Y ANIMACIONES -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS ANIMACIONES -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- TU ESTILO PROPIO -->
+
     <link rel="stylesheet" href="estilos.css">
+
+    <!-- AJUSTES ESPECÍFICOS DE CELULAR Y TOAST -->
+    <style>
+        /* Acomodar color de la notificación */
+        #toast-carrito {
+            background-color: #111 !important;
+            border: 1px solid #333 !important;
+        }
+        #toast-subtitulo {
+            color: #4da6ff !important;
+            font-weight: 600 !important;
+        }
+
+        @media (max-width: 768px) {
+            /* Header más finito en móvil */
+            .encabezado {
+                padding: 6px 12px !important;
+                min-height: 48px !important;
+            }
+            .logo-imagen img {
+                max-height: 32px !important;
+            }
+            .navegacion a {
+                font-size: 0.72rem !important;
+                padding: 2px 4px !important;
+            }
+            .boton-carrito {
+                padding: 4px 8px !important;
+                font-size: 0.75rem !important;
+            }
+
+            /* Carrito lateral en celulares para que no se pise abajo */
+            .panel-carrito {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            #items-carrito {
+                flex: 1 !important;
+                overflow-y: auto !important;
+                padding-bottom: 20px !important;
+            }
+            .total-carrito {
+                padding-bottom: 25px !important;
+            }
+
+            /* Grilla de productos */
+            .grilla-productos, #grilla-productos {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 6px !important;
+                padding: 2px !important;
+                width: 100% !important;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-dark text-white">
+<body>
 
-    <!-- BARRA DE NAVEGACIÓN FINITA Y PRO -->
-    <header class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary sticky-top py-1 px-3">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="logo.jpeg" alt="Nave A Punto Detailing" style="height: 36px; border-radius: 4px;" class="me-2">
-            </a>
+    <header class="encabezado">
+        <a href="#" class="logo-imagen">
+            <img src="logo.jpeg" alt="Nave A Punto Detailing">
+        </a>
 
-            <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-outline-light btn-sm d-flex align-items-center gap-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#panelCarrito">
-                    🛒 <span class="d-none d-sm-inline">Carrito</span>
-                    <span class="badge bg-danger rounded-pill" id="cantidad-carrito">0</span>
-                </button>
+        <nav class="navegacion">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#marcas">Marcas</a>
+            <a href="#quienes-somos">Quiénes somos</a>
+        </nav>
 
-                <button class="navbar-toggler py-1 px-2 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion">
-                    <span class="navbar-toggler-icon" style="transform: scale(0.85);"></span>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="menuNavegacion">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
-                    <li class="nav-item"><a class="nav-link py-1" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link py-1" href="#productos">Productos</a></li>
-                    <li class="nav-item"><a class="nav-link py-1" href="#marcas">Marcas</a></li>
-                    <li class="nav-item"><a class="nav-link py-1" href="#quienes-somos">Quiénes somos</a></li>
-                </ul>
-            </div>
-        </div>
+        <button class="boton-carrito" id="abrir-carrito">
+            🛒 Carrito <span id="cantidad-carrito">0</span>
+        </button>
     </header>
 
     <main>
-        <!-- SECCIÓN PORTADA / HERO -->
-        <section class="py-5 bg-black text-center text-lg-start border-bottom border-secondary" id="inicio">
-            <div class="container py-4">
-                <div class="row align-items-center gy-4">
-                    <div class="col-lg-7">
-                        <span class="badge bg-danger mb-2 px-3 py-2 text-uppercase fw-bold">NaveaPunto Detailing Store</span>
-                        <h1 class="display-4 fw-black text-white text-uppercase my-3">
-                            Llevá el cuidado<br>de tu auto <span class="text-danger">al siguiente nivel.</span>
-                        </h1>
-                        <p class="lead text-secondary mb-4">
-                            Productos de detailing, marcas reconocidas y todo lo que necesitás para cuidar tu vehículo.
-                        </p>
-                        <a href="#productos" class="btn btn-danger btn-lg text-uppercase fw-bold px-4">
-                            Explorar productos ↗
-                        </a>
-                    </div>
-                    <div class="col-lg-5 text-center">
-                        <div class="p-4 border border-secondary rounded bg-dark d-inline-block shadow-lg">
-                            <h2 class="display-6 fw-bold text-white mb-0">Nave a Punto</h2>
-                            <p class="small text-danger text-uppercase tracking-wider mt-2 mb-0">Car Care · Detailing · Quality</p>
-                        </div>
-                    </div>
-                </div>
+        <section class="portada" id="inicio">
+            <div class="portada-contenido">
+                <p class="etiqueta">NAVEAPUNTO DETAILING STORE</p>
+
+                <h1>
+                    LLEVÁ EL CUIDADO<br>
+                    DE TU AUTO <span>AL SIGUIENTE NIVEL.</span>
+                </h1>
+
+                <p class="descripcion">
+                    Productos de detailing, marcas reconocidas
+                    y todo lo que necesitás para cuidar tu vehículo.
+                </p>
+
+                <a href="#productos" class="boton-principal">
+                    EXPLORAR PRODUCTOS ↗
+                </a>
+            </div>
+
+            <div class="portada-decoracion">
+                <span>Nave a Punto</span>
+                <p>CAR CARE · DETAILING · QUALITY</p>
             </div>
         </section>
 
-        <!-- BENEFICIOS -->
-        <section class="py-3 bg-secondary text-white text-center border-bottom border-dark">
-            <div class="container">
-                <div class="row gy-2 small fw-bold">
-                    <div class="col-md-4">✦ PRODUCTOS SELECCIONADOS</div>
-                    <div class="col-md-4">✦ MARCAS DE DETAILING</div>
-                    <div class="col-md-4">✦ PEDIDOS FÁCILES POR WHATSAPP</div>
+        <section class="beneficios">
+            <div>✦ PRODUCTOS SELECCIONADOS</div>
+            <div>✦ MARCAS DE DETAILING</div>
+            <div>✦ PEDIDOS FÁCILES POR WHATSAPP</div>
+        </section>
+
+        <section class="seccion-productos" id="productos">
+            <div class="titulo-seccion">
+                <div>
+                    <p class="etiqueta">NUESTRO CATÁLOGO</p>
+                    <h2>PRODUCTOS <span>DESTACADOS.</span></h2>
                 </div>
+
+                <p>Todo para el cuidado de tu vehículo.</p>
+            </div>
+
+            <div class="filtros">
+                <button class="filtro activo" data-categoria="todos">Todos</button>
+                <button class="filtro" data-categoria="lavado">Lavado</button>
+                <button class="filtro" data-categoria="interior">Interior</button>
+                <button class="filtro" data-categoria="limpieza">Limpieza</button>
+                <button class="filtro" data-categoria="proteccion">Protección</button>
+                <button class="filtro" data-categoria="aromatizantes">Aromatizantes</button>
+                <button class="filtro" data-categoria="microfibras">Microfibras</button>
+                <button class="filtro" data-categoria="accesorios">Accesorios</button>
+            </div>
+
+            <input
+                type="search"
+                id="buscar-productos"
+                class="buscador-productos"
+                placeholder="Buscar productos..."
+                aria-label="Buscar productos"
+            />
+
+            <div class="grilla-productos" id="grilla-productos">
+                <!-- Los productos se agregarán con JavaScript -->
             </div>
         </section>
 
-        <!-- SECCIÓN PRODUCTOS -->
-        <section class="py-5 container" id="productos">
-            <div class="text-center text-md-start mb-4">
-                <span class="badge bg-outline-danger border border-danger text-danger mb-1">NUESTRO CATÁLOGO</span>
-                <h2 class="h1 fw-bold text-white">PRODUCTOS <span class="text-danger">DESTACADOS.</span></h2>
-                <p class="text-secondary">Todo para el cuidado de tu vehículo.</p>
-            </div>
+        <section class="seccion-marcas" id="marcas">
+            <p class="etiqueta">TRABAJAMOS CON MARCAS DE DETAILING</p>
+            <h2>CALIDAD PARA CADA DETALLE.</h2>
 
-            <!-- FILTROS -->
-            <div class="d-flex flex-wrap gap-2 mb-3 justify-content-center justify-content-md-start" id="contenedor-filtros">
-                <button class="btn btn-sm btn-danger filtro-btn" data-categoria="todos">Todos</button>
-                <button class="btn btn-sm btn-outline-light filtro-btn" data-categoria="lavado">Lavado</button>
-                <button class="btn btn-sm btn-outline-light filtro-btn" data-categoria="interior">Interior</button>
-                <button class="btn btn-sm btn-outline-light filtro-btn" data-categoria="limpieza">Limpieza</button>
-                <button class="btn btn-sm btn-outline-light filtro-btn" data-categoria="proteccion">Protección</button>
-                <button class="btn btn-sm btn-outline-light filtro-btn" data-categoria="aromatizantes">Aromatizantes</button>
-                <button class="btn btn-sm btn-outline-light filtro-btn" data-categoria="microfibras">Microfibras</button>
-                <button class="btn btn-sm btn-outline-light filtro-btn" data-categoria="accesorios">Accesorios</button>
-            </div>
-
-            <!-- BUSCADOR -->
-            <div class="mb-4">
-                <input type="search" id="buscar-productos" class="form-control bg-dark text-white border-secondary" placeholder="Buscar productos por nombre..." aria-label="Buscar productos">
-            </div>
-
-            <!-- GRILLA DE PRODUCTOS (BOOTSTRAP RESPONSIVE) -->
-            <div class="row g-2 g-md-3" id="grilla-productos">
-                <!-- Se cargan por JavaScript -->
-            </div>
-        </section>
-
-        <!-- SECCIÓN MARCAS -->
-        <section class="py-5 bg-black text-center border-top border-bottom border-secondary" id="marcas">
-            <div class="container">
-                <span class="text-danger fw-bold small text-uppercase">Trabajamos con marcas de detailing</span>
-                <h2 class="h1 fw-bold text-white mt-1 mb-4">CALIDAD PARA CADA DETALLE.</h2>
-                <div class="d-flex justify-content-center gap-4 text-white-50 fw-bold fs-5">
-                    <span>TOXIC SHINE</span>
-                    <span>·</span>
-                    <span>K78</span>
-                    <span>·</span>
-                    <span>Y MÁS MARCAS</span>
-                </div>
+            <div class="lista-marcas">
+                <span>TOXIC SHINE</span>
+                <span>Y MÁS MARCAS</span>
             </div>
         </section>
         
-        <!-- SECCIÓN QUIÉNES SOMOS -->
-        <section class="py-5 container" id="quienes-somos">
-            <div class="row align-items-center gy-4">
-                <div class="col-lg-12">
-                    <span class="text-danger fw-bold small text-uppercase">Conocé nuestro proyecto</span>
-                    <h2 class="h1 fw-bold text-white mt-1 mb-3">¿QUIÉNES <span class="text-danger">SOMOS?</span></h2>
-                    <p class="text-secondary">
-                        En NaveaPunto nos dedicamos al mundo del detailing y al cuidado automotor, ofreciendo una variedad de productos para la limpieza, protección y mantenimiento de tu vehículo.
-                    </p>
-                    <p class="text-secondary">
-                        Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda. Trabajamos para brindarte soluciones que se adapten a tus necesidades, construyendo una relación basada en la calidad, el compromiso y, sobre todo, la confianza de nuestros clientes.
-                    </p>
+        <section class="seccion-quienes" id="quienes-somos">
+            <div class="quienes-contenido">
+                <p class="etiqueta">CONOCÉ NUESTRO PROYECTO</p>
+
+                <h2>
+                    ¿QUIÉNES <span>SOMOS?</span>
+                </h2>
+
+                <p class="quienes-texto">
+                 En NaveaPunto nos dedicamos al mundo del detailing y al cuidado automotor, ofreciendo una variedad de productos para la limpieza, protección y mantenimiento de tu vehículo.
+
+Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda. Trabajamos para brindarte soluciones que se adapten a tus necesidades, construyendo una relación basada en la calidad, el compromiso y, sobre todo, la confianza de nuestros clientes.
+                </p>
+
+                <p class="quienes-texto">
+                    Queremos que encuentres en un solo lugar distintas
+                    opciones para el cuidado de tu auto, con un catálogo
+                    fácil de explorar y una forma sencilla de realizar
+                    tus pedidos.
+                </p>
+
+                <div class="quienes-destacados">
+                    <div>
+                        <span>01</span>
+                        <h3>Cuidado automotor</h3>
+                        <p>Productos para distintas necesidades de limpieza y mantenimiento.</p>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <h3>Compra sencilla</h3>
+                        <p>Explorá el catálogo y consultá tus pedidos por WhatsApp.</p>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <h3>Pasión por los detalles</h3>
+                        <p>Nos interesa que cada detalle cuente a la hora de cuidar tu vehículo.</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER / PIE DE PÁGINA -->
-    <footer class="py-4 bg-black border-top border-secondary text-center text-white">
-        <div class="container">
-            <img src="logo.jpeg" alt="Nave A Punto Detailing" style="height: 40px; border-radius: 4px;" class="mb-2">
-            <p class="small text-secondary mb-3">Todo para cuidar tu auto, en un solo lugar.</p>
+    <footer class="pie">
+        <a href="#inicio" class="logo-imagen">
+            <img src="logo.jpeg" alt="Nave A Punto Detailing">
+        </a>
 
-            <div class="d-flex justify-content-center gap-3 mb-3">
-                <a href="https://www.instagram.com/nave_a_punto/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm d-flex align-items-center gap-2">
-                    <span>Instagram</span> <small class="text-secondary">@nave_a_punto</small>
-                </a>
-                <a href="https://www.tiktok.com/@nave_a_punto" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm d-flex align-items-center gap-2">
-                    <span>TikTok</span> <small class="text-secondary">@nave_a_punto</small>
-                </a>
-            </div>
+        <p>Todo para cuidar tu auto, en un solo lugar.</p>
 
-            <p class="small text-secondary mb-0">© 2026 NaveaPunto. Todos los derechos reservados.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px;">
+            <a
+                href="https://www.instagram.com/nave_a_punto/"
+                class="instagram-enlace"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Instagram"
+            >
+                <span class="instagram-icono">◎</span>
+                <span>Instagram</span>
+                <span class="instagram-usuario">@nave_a_punto</span>
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@nave.apunto?_r=1&_t=ZS-9AaARXAE15A"
+                class="instagram-enlace"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar TikTok"
+            >
+                <span class="instagram-icono">♪</span>
+                <span>TikTok</span>
+                <span class="instagram-usuario">@nave.apunto</span>
+            </a>
         </div>
+
+        <p class="copyright">© 2026 NaveaPunto. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- CARRITO LATERAL OFFCANVAS DE BOOTSTRAP (100% GARANTIZADO) -->
-    <div class="offcanvas offcanvas-end bg-black text-white border-start border-secondary" tabindex="-1" id="panelCarrito" aria-labelledby="tituloCarrito">
-        <div class="offcanvas-header border-bottom border-secondary py-2">
-            <h5 class="offcanvas-title fw-bold text-white" id="tituloCarrito">🛒 Tu Carrito</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-
-        <div class="offcanvas-body d-flex flex-column" id="cuerpoCarrito">
-            <div id="items-carrito" class="flex-grow-1 overflow-y-auto mb-3">
-                <p class="text-secondary text-center my-4">Tu carrito está vacío.</p>
+    <div class="fondo-carrito" id="fondo-carrito">
+        <aside class="panel-carrito">
+            <div class="cabecera-carrito">
+                <h2>Tu carrito</h2>
+                <button id="cerrar-carrito" aria-label="Cerrar carrito">✕</button>
             </div>
 
-            <div class="border-top border-secondary pt-3 mt-auto">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="fs-5 text-white fw-bold">Total:</span>
-                    <span class="fs-5 text-danger fw-bold" id="total-carrito">$0</span>
+            <div id="items-carrito">
+                <p class="carrito-vacio">Todavía no agregaste productos.</p>
+            </div>
+
+            <div class="total-carrito">
+                <p>Total: <strong id="total-carrito">$0</strong></p>
+                <button id="finalizar-compra">PEDIR POR WHATSAPP ↗</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- VENTANA DE DETALLES DEL PRODUCTO -->
+    <div class="modal-producto" id="modal-producto" aria-hidden="true">
+        <div class="modal-producto-fondo" id="cerrar-modal-fondo"></div>
+
+        <section
+            class="modal-producto-contenido"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="detalle-nombre"
+        >
+            <button
+                class="modal-producto-cerrar"
+                id="cerrar-modal-producto"
+                type="button"
+                aria-label="Cerrar detalles"
+            >×</button>
+
+            <div class="modal-producto-imagen">
+                <img id="detalle-imagen" src="" alt="">
+            </div>
+
+            <div class="modal-producto-info">
+                <span class="detalle-etiqueta" id="detalle-marca"></span>
+                <p class="detalle-categoria" id="detalle-categoria"></p>
+                <h2 id="detalle-nombre"></h2>
+                <p class="detalle-descripcion" id="detalle-descripcion"></p>
+
+                <div class="detalle-seccion">
+                    <h3>¿Para qué sirve?</h3>
+                    <p id="detalle-uso"></p>
                 </div>
-                <button id="finalizar-compra" class="btn btn-success btn-lg w-100 fw-bold text-uppercase d-flex align-items-center justify-content-center gap-2">
-                    Pedir por WhatsApp ↗
+
+                <div class="detalle-seccion">
+                    <h3>¿Cómo se utiliza?</h3>
+                    <p id="detalle-aplicacion"></p>
+                </div>
+
+                <p class="detalle-precio" id="detalle-precio"></p>
+                <p class="detalle-stock" id="detalle-stock"></p>
+
+                <button
+                    class="detalle-boton-agregar"
+                    id="detalle-agregar"
+                    type="button"
+                >
+                    AGREGAR AL CARRITO
                 </button>
+
+                <p class="detalle-aclaracion">
+                    Seguí siempre las indicaciones y precauciones del envase
+                    del producto específico.
+                </p>
             </div>
-        </div>
+        </section>
     </div>
 
-    <!-- MODAL DE DETALLES DE PRODUCTO NATIVO DE BOOTSTRAP -->
-    <div class="modal fade" id="modalProducto" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark text-white border border-secondary shadow-lg">
-                <div class="modal-header border-bottom border-secondary py-2">
-                    <span class="badge bg-danger me-2" id="detalle-marca">K78</span>
-                    <h5 class="modal-title fw-bold" id="detalle-nombre">Nombre del Producto</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row gy-3 align-items-center">
-                        <div class="col-md-5 text-center">
-                            <img id="detalle-imagen" src="" alt="" class="img-fluid rounded border border-secondary p-2 bg-black" style="max-height: 250px; object-fit: contain;">
-                        </div>
-                        <div class="col-md-7">
-                            <p class="text-secondary small text-uppercase mb-1" id="detalle-categoria"></p>
-                            <p class="fw-medium text-white-50" id="detalle-descripcion"></p>
-
-                            <div class="mb-2">
-                                <h6 class="text-danger fw-bold mb-1">¿Para qué sirve?</h6>
-                                <p class="small text-white-50" id="detalle-uso"></p>
-                            </div>
-
-                            <div class="mb-3">
-                                <h6 class="text-danger fw-bold mb-1">¿Cómo se utiliza?</h6>
-                                <p class="small text-white-50" style="white-space: pre-line;" id="detalle-aplicacion"></p>
-                            </div>
-
-                            <div class="d-flex justify-content-between align-items-center bg-black p-2 rounded border border-secondary mb-3">
-                                <span class="fs-4 fw-bold text-white" id="detalle-precio">$0</span>
-                                <span class="badge bg-secondary" id="detalle-stock">Stock disponible: 0</span>
-                            </div>
-
-                            <button class="btn btn-danger w-100 fw-bold py-2 text-uppercase" id="detalle-agregar">
-                                Agregar al carrito
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- NOTIFICACIÓN TOAST LEGIBLE -->
+    <!-- NOTIFICACIÓN FLOTANTE (TOAST) -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 99999;">
-        <div id="toast-carrito" class="toast align-items-center bg-black text-white border border-secondary shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="toast-carrito" class="toast align-items-center text-bg-dark border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body d-flex align-items-center gap-2">
-                    <span class="fs-4">🛒</span>
+                    <span style="font-size: 1.2rem;">🛒</span>
                     <div>
-                        <strong id="toast-titulo" class="d-block text-white fs-6">¡Producto agregado!</strong>
-                        <small id="toast-subtitulo" class="text-info fw-bold d-block">Se sumó a tu carrito de compras.</small>
+                        <strong id="toast-titulo" class="d-block text-white" style="font-size: 0.9rem;">¡Producto agregado!</strong>
+                        <small id="toast-subtitulo" class="d-block mt-1" style="font-size: 0.82rem;">Se sumó a tu carrito de compras.</small>
                     </div>
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -248,7 +337,7 @@
         </div>
     </div>
 
-    <!-- BOOTSTRAP 5 BUNDLE JS & AOS -->
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
