@@ -1388,3 +1388,31 @@ body.modal-producto-abierto {
         width: 100% !important;
     }
 }
+/* CORRECCIÓN DEFINITIVA PARA CELULARES - CARRITO Y BOTÓN WHATSAPP */
+@media (max-width: 768px) {
+    /* Hacer que el panel lateral del carrito ocupe exactamente la pantalla y no se corte */
+    .panel-carrito {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Contenedor con scroll para los productos agregados */
+    #items-carrito {
+        flex: 1 !important;
+        overflow-y: auto !important;
+        padding-bottom: 20px !important;
+    }
+
+    /* Fijar la zona del total y el botón de WhatsApp para que NUNCA desaparezca abajo */
+    .total-carrito {
+        position: sticky !important;
+        bottom: 0 !important;
+        background-color: #0b0f17 !important;
+        padding: 15px !important;
+        border-top: 1px solid #1f293d !important;
+        z-index: 20 !important;
+    }
+}
