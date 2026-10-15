@@ -7,7 +7,7 @@ let productos = [
         categoria: "lavado",
         precio: 5500,
         disponibles: 6,
-        imagen: "WhatsApp Image 2026-10-12 at 4.36.02 PM_2.jpeg",
+        imagen: "phneutro.jpeg.jpeg",
         descripcion: "Shampoo con PH neutro (código 301) que limpia sin dañar tratamientos previos ni ceras.",
         uso: "Lavado exterior seguro de la carrocería[cite: 7].",
         aplicacion: "Diluir en agua según instrucciones, lavar con guante de microfibra y enjuagar."
