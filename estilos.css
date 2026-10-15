@@ -163,7 +163,6 @@ input:focus-visible {
 
 /* PORTADA */
 
-/* PORTADA CON EL FLYER DE FONDO A LA DERECHA */
 .portada {
     position: relative;
     isolation: isolate;
@@ -205,7 +204,6 @@ input:focus-visible {
         0 0 0 45px rgba(227, 38, 54, .025),
         0 0 0 95px rgba(227, 38, 54, .02);
 }
-
 
 .portada-contenido {
     max-width: 710px;
@@ -883,7 +881,6 @@ body.modal-producto-abierto {
     overflow: hidden;
 }
 
-/* Botón para abrir los detalles en cada tarjeta */
 .boton-ver-detalles {
     width: 100%;
     margin-bottom: 9px;
@@ -1070,7 +1067,7 @@ body.modal-producto-abierto {
         font-size: 13px;
     }
 }
-/* ETIQUETA / BADGE DE COMBOS Y OFERTAS */
+
 .badge-combo {
     position: absolute;
     top: 12px;
@@ -1087,18 +1084,17 @@ body.modal-producto-abierto {
     z-index: 2;
 }
 
-/* ESTILO DEL AVISO FLOTANTE (TOAST) */
 #toast-carrito {
     background-color: #151515 !important;
     border: 1px solid #2a2a2a !important;
     border-left: 4px solid #e32636 !important;
     border-radius: 10px;
 }
+
 /* ==========================================
    CORRECCIÓN DEL CARRITO (OVERRIDE BOOTSTRAP)
    ========================================== */
 
-/* Panel del carrito */
 .panel-carrito {
     display: flex !important;
     flex-direction: column !important;
@@ -1111,7 +1107,6 @@ body.modal-producto-abierto {
     box-sizing: border-box !important;
 }
 
-/* Cabecera del carrito */
 .cabecera-carrito {
     display: flex !important;
     justify-content: space-between !important;
@@ -1141,7 +1136,6 @@ body.modal-producto-abierto {
     color: #e32636 !important;
 }
 
-/* Ítem individual en el carrito */
 .item-carrito {
     display: flex !important;
     align-items: center !important;
@@ -1150,7 +1144,6 @@ body.modal-producto-abierto {
     border-bottom: 1px solid #222222 !important;
 }
 
-/* Forzar que la imagen no sea gigante */
 .item-carrito img {
     width: 65px !important;
     height: 65px !important;
@@ -1163,7 +1156,6 @@ body.modal-producto-abierto {
     flex-shrink: 0 !important;
 }
 
-/* Info del producto */
 .item-carrito-info {
     flex: 1 !important;
     min-width: 0 !important;
@@ -1184,7 +1176,6 @@ body.modal-producto-abierto {
     margin: 0 0 8px 0 !important;
 }
 
-/* Controles de cantidad (+ / -) */
 .cantidad-controles {
     display: inline-flex !important;
     align-items: center !important;
@@ -1219,7 +1210,6 @@ body.modal-producto-abierto {
     color: #ffffff !important;
 }
 
-/* Botón quitar producto */
 .quitar-producto {
     display: inline-block !important;
     margin-top: 6px !important;
@@ -1237,7 +1227,6 @@ body.modal-producto-abierto {
     color: #e32636 !important;
 }
 
-/* Pie del carrito y Total */
 .total-carrito {
     margin-top: auto !important;
     padding-top: 20px !important;
@@ -1259,11 +1248,10 @@ body.modal-producto-abierto {
     font-size: 1.2rem !important;
 }
 
-/* Botón Pedir por WhatsApp */
 #finalizar-compra {
     width: 100% !important;
     padding: 14px !important;
-    background: #25d366 !important; /* Verde WhatsApp */
+    background: #25d366 !important;
     color: #ffffff !important;
     border: none !important;
     border-radius: 8px !important;
@@ -1286,12 +1274,12 @@ body.modal-producto-abierto {
     cursor: not-allowed !important;
     box-shadow: none !important;
 }
+
 /* ==========================================
    ADAPTABILIDAD PARA CELULARES (RESPONSIVE)
    ========================================== */
 
 @media (max-width: 768px) {
-    /* El encabezado se acomoda en columna para que el menú no choque */
     .encabezado {
         padding: 15px 5% !important;
         flex-direction: column !important;
@@ -1303,7 +1291,6 @@ body.modal-producto-abierto {
         font-size: 0.85rem !important;
     }
 
-    /* La portada principal se apila: texto arriba, auto/fondo abajo */
     .portada {
         flex-direction: column !important;
         padding: 60px 5% !important;
@@ -1315,22 +1302,19 @@ body.modal-producto-abierto {
         font-size: 2.2rem !important;
     }
 
-    /* Ajustar la grilla de productos para que entren de a 1 o 2 cómodos */
     .grilla-productos {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
         padding: 0 15px !important;
     }
 
-    /* El panel del carrito ocupa toda la pantalla en el celular */
     .panel-carrito {
         width: 100% !important;
         max-width: 100% !important;
     }
 }
-/* --- DISEÑO MÓVIL: TARJETAS ANCHAS Y GORDITAS --- */
+
 @media (max-width: 768px) {
-    /* 1. Grilla pegada a los bordes de la pantalla del celular */
     .grilla-productos {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -1338,7 +1322,6 @@ body.modal-producto-abierto {
         padding: 0 6px !important;
     }
 
-    /* 2. Estilo de cada tarjeta generada por JS para que sea compacta y ancha */
     .grilla-productos > div, 
     .tarjeta-producto {
         background-color: #111 !important;
@@ -1351,7 +1334,6 @@ body.modal-producto-abierto {
         margin-bottom: 0 !important;
     }
 
-    /* 3. Imagen de los productos más petisa (baja) para que no se alargue */
     .grilla-productos img, 
     .tarjeta-producto img {
         height: 90px !important;
@@ -1360,7 +1342,6 @@ body.modal-producto-abierto {
         margin-bottom: 6px !important;
     }
 
-    /* 4. Títulos y textos más chicos para que entren bien */
     .grilla-productos h3, 
     .tarjeta-producto h3 {
         font-size: 0.8rem !important;
@@ -1374,7 +1355,6 @@ body.modal-producto-abierto {
         margin-bottom: 4px !important;
     }
 
-    /* 5. Precios y botones ocupando todo el ancho */
     .grilla-productos .precio, 
     .tarjeta-producto .precio {
         font-size: 0.9rem !important;
@@ -1388,9 +1368,8 @@ body.modal-producto-abierto {
         width: 100% !important;
     }
 }
-/* CORRECCIÓN DEFINITIVA PARA CELULARES - CARRITO Y BOTÓN WHATSAPP */
+
 @media (max-width: 768px) {
-    /* Hacer que el panel lateral del carrito ocupe exactamente la pantalla y no se corte */
     .panel-carrito {
         width: 100% !important;
         max-width: 100% !important;
@@ -1399,14 +1378,12 @@ body.modal-producto-abierto {
         flex-direction: column !important;
     }
 
-    /* Contenedor con scroll para los productos agregados */
     #items-carrito {
         flex: 1 !important;
         overflow-y: auto !important;
         padding-bottom: 20px !important;
     }
 
-    /* Fijar la zona del total y el botón de WhatsApp para que NUNCA desaparezca abajo */
     .total-carrito {
         position: sticky !important;
         bottom: 0 !important;
@@ -1414,10 +1391,9 @@ body.modal-producto-abierto {
         padding: 15px !important;
         border-top: 1px solid #1f293d !important;
         z-index: 20 !important;
-
     }
 }
-/* Arreglar la caja decorativa de la portada en celulares para que no tape ni quede mal */
+
 @media (max-width: 768px) {
     .portada {
         flex-direction: column !important;
@@ -1429,29 +1405,6 @@ body.modal-producto-abierto {
         width: 100% !important;
         padding: 15px !important;
     }
-    .portada-decoracion span {
-        font-size: 1.5rem !important;
-    }
-}
-/* Agrandar el texto 'Nave a Punto' y la frase en celulares */
-@media (max-width: 768px) {
-    .portada-decoracion span {
-        font-size: 2.2rem !important;
-        font-weight: 800 !important;
-        letter-spacing: 1px !important;
-        display: block !important;
-        margin-bottom: 6px !important;
-    }
-
-    .portada-decoracion p {
-        font-size: 0.85rem !important;
-        font-weight: 700 !important;
-        letter-spacing: 1.5px !important;
-        opacity: 0.9 !important;
-    }
-}
-/* Hacer que 'NAVE A PUNTO' se vea como la marca principal en celulares */
-@media (max-width: 768px) {
     .portada-decoracion span {
         font-size: 1.8rem !important;
         font-weight: 900 !important;
@@ -1467,28 +1420,7 @@ body.modal-producto-abierto {
         font-size: 0.8rem !important;
         font-weight: 700 !important;
         letter-spacing: 2px !important;
-        color: #e63946 !important; /* Rojo de la marca */
+        color: #e63946 !important;
         text-transform: uppercase !important;
     }
-}
-/* Espaciado de seguridad para el texto de stock */
-.producto-stock {
-    letter-spacing: 0.5px !important;
-    word-spacing: 3px !important;
-}
-/* Controlar tamaño y proporción de las imágenes de productos para que no se desborden */
-.tarjeta-producto .producto-imagen-contenedor {
-    width: 100% !important;
-    height: 180px !important;
-    overflow: hidden !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background-color: #0b0f17 !important;
-}
-
-.tarjeta-producto .producto-imagen {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important; /* Ajusta la imagen sin deformarla ni desbordarla */
 }
