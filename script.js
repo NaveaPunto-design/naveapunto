@@ -173,6 +173,7 @@ function mostrarProductos(lista) {
                 <p class="producto-precio">$${p.precio.toLocaleString("es-AR")}</p>
                 <div class="producto-pie">
                     <span class="producto-stock ${agotado ? "stock-agotado" : ""}">${textoStock}</span>
+                    <button class="boton-ver-detalles" onclick="abrirDetallesProducto(${p.id})">VER DETALLES</button>
                     <button class="boton-agregar" onclick="agregarAlCarrito(${p.id})" ${agotado ? "disabled" : ""}>
                         ${agotado ? "AGOTADO" : "AGREGAR"}
                     </button>
@@ -251,13 +252,11 @@ function abrirDetallesProducto(id) {
         detalleAgregar.textContent = "AGREGAR AL CARRITO";
     }
 
-    modalProducto.setAttribute("aria-hidden", "false");
-    modalProducto.classList.add("activo");
+    modalProducto.classList.add("abierto");
 }
 
 function cerrarModal() {
-    modalProducto.setAttribute("aria-hidden", "true");
-    modalProducto.classList.remove("activo");
+    modalProducto.classList.remove("abierto");
 }
 
 if (cerrarModalProducto) cerrarModalProducto.addEventListener("click", cerrarModal);
@@ -339,7 +338,7 @@ function actualizarCarrito() {
     cantidadCarrito.textContent = totalUnidades;
 
     if (carrito.length === 0) {
-        itemsCarrito.innerHTML = `<p class="carrito-vacio">El carrito está vacío.</p>`;
+        itemsCarrito.innerHTML = `<p class="carrito-vacio" style="color: #8a99ad; text-align: center; padding: 30px 0;">El carrito está vacío.</p>`;
         totalCarrito.textContent = "$0";
         return;
     }
@@ -353,16 +352,16 @@ function actualizarCarrito() {
         item.classList.add("item-carrito");
         item.innerHTML = `
             <img src="${p.imagen}" alt="${p.nombre}">
-            <div class="item-detalles">
+            <div class="item-carrito-info">
                 <h4>${p.nombre}</h4>
-                <p class="item-precio">$${p.precio.toLocaleString("es-AR")}</p>
-                <div class="controles-cantidad">
+                <p>$${p.precio.toLocaleString("es-AR")}</p>
+                <div class="cantidad-controles">
                     <button onclick="cambiarCantidad(${p.id}, -1)">-</button>
                     <span>${p.cantidad}</span>
                     <button onclick="cambiarCantidad(${p.id}, 1)">+</button>
                 </div>
+                <button class="quitar-producto" onclick="eliminarDelCarrito(${p.id})">Eliminar</button>
             </div>
-            <button class="boton-eliminar" onclick="eliminarDelCarrito(${p.id})">✕</button>
         `;
         itemsCarrito.appendChild(item);
     });
@@ -413,20 +412,20 @@ if (finalizarCompra) {
 // ABRIR Y CERRAR CARRITO
 if (abrirCarrito) {
     abrirCarrito.addEventListener("click", () => {
-        fondoCarrito.classList.add("activo");
+        fondoCarrito.classList.add("abierto");
     });
 }
 
 if (cerrarCarrito) {
     cerrarCarrito.addEventListener("click", () => {
-        fondoCarrito.classList.remove("activo");
+        fondoCarrito.classList.remove("abierto");
     });
 }
 
 if (fondoCarrito) {
     fondoCarrito.addEventListener("click", (e) => {
         if (e.target === fondoCarrito) {
-            fondoCarrito.classList.remove("activo");
+            fondoCarrito.classList.remove("abierto");
         }
     });
 }
