@@ -13,14 +13,67 @@
 
     <link rel="stylesheet" href="estilos.css">
 
-    <!-- ESTILO FORZADO PARA MÓVIL: TARJETAS ANCHAS, GORDITAS Y PORTADA ARREGLADA -->
+    <!-- ESTILOS Y CORRECCIONES PARA MÓVIL Y TOAST -->
     <style>
+        /* Toast con fondo oscuro sólido y letras bien legibles */
+        #toast-carrito {
+            background-color: #111 !important;
+            border: 1px solid #333 !important;
+        }
+        #toast-carrito .text-muted {
+            color: #d1d5db !important; /* Gris claro bien legible */
+        }
+
         @media (max-width: 768px) {
+            /* Navegación móvil mucho más finita */
+            header.encabezado {
+                padding: 6px 12px !important;
+                min-height: 50px !important;
+            }
+            .logo-imagen img {
+                max-height: 32px !important;
+            }
+            nav.navegacion a {
+                font-size: 0.75rem !important;
+                padding: 4px 6px !important;
+            }
+            .boton-carrito {
+                padding: 4px 8px !important;
+                font-size: 0.75rem !important;
+            }
+
+            /* Carrito móvil: asegurar que el botón de WhatsApp no se tape */
+            .fondo-carrito {
+                z-index: 99999 !important;
+            }
+            .panel-carrito {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 100vh !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            #items-carrito {
+                flex: 1 !important;
+                overflow-y: auto !important;
+                max-height: calc(100vh - 180px) !important;
+                padding-bottom: 20px !important;
+            }
+            .total-carrito {
+                position: sticky !important;
+                bottom: 0 !important;
+                background-color: #111 !important;
+                padding: 12px !important;
+                border-top: 1px solid #222 !important;
+                z-index: 10 !important;
+            }
+
+            /* Grilla de productos en dos columnas prolijas */
             .grilla-productos, #grilla-productos {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
-                gap: 4px !important;
-                padding: 2px !important;
+                gap: 6px !important;
+                padding: 4px !important;
                 width: 100% !important;
             }
 
@@ -57,23 +110,6 @@
                 padding: 6px 2px !important;
                 font-size: 0.72rem !important;
                 width: 100% !important;
-            }
-
-            .portada, .seccion-portada, [id*="inicio"] {
-                background-size: cover !important;
-                background-position: center center !important;
-                height: auto !important;
-                min-height: 350px !important;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: center !important;
-                padding: 20px 10px !important;
-            }
-
-            .portada-contenido {
-                width: 100% !important;
-                max-width: 100% !important;
-                text-align: center !important;
             }
         }
     </style>
@@ -119,7 +155,7 @@
             </div>
 
             <div class="portada-decoracion">
-                <span>NP</span>
+                <span>Nave a Punto</span>
                 <p>CAR CARE · DETAILING · QUALITY</p>
             </div>
         </section>
@@ -185,14 +221,7 @@
                 <p class="quienes-texto">
                  En NaveaPunto nos dedicamos al mundo del detailing y al cuidado automotor, ofreciendo una variedad de productos para la limpieza, protección y mantenimiento de tu vehículo.
 
-Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda. Trabajamos para brindarte soluciones que se adapten a tus necesidades, construyendo una relación basada en la calidad, el compromiso y, sobre todo, la confianza de nuestros clientes.
-                </p>
-
-                <p class="quienes-texto">
-                    Queremos que encuentres en un solo lugar distintas
-                    opciones para el cuidado de tu auto, con un catálogo
-                    fácil de explorar y una forma sencilla de realizar
-                    tus pedidos.
+                Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda. Trabajamos para brindarte soluciones que se adapten a tus necesidades, construyendo una relación basada en la calidad, el compromiso y, sobre todo, la confianza de nuestros clientes.
                 </p>
 
                 <div class="quienes-destacados">
@@ -225,17 +254,31 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
 
         <p>Todo para cuidar tu auto, en un solo lugar.</p>
 
-        <a
-            href="https://www.instagram.com/nave_a_punto/"
-            class="instagram-enlace"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visitar el Instagram de NaveaPunto"
-        >
-            <span class="instagram-icono">◎</span>
-            <span>Seguinos en Instagram</span>
-            <span class="instagram-usuario">@nave_a_punto</span>
-        </a>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px;">
+            <a
+                href="https://www.instagram.com/nave_a_punto/"
+                class="instagram-enlace"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar el Instagram de NaveaPunto"
+            >
+                <span class="instagram-icono">◎</span>
+                <span>Instagram</span>
+                <span class="instagram-usuario">@nave_a_punto</span>
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@nave_a_punto"
+                class="instagram-enlace"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar el TikTok de NaveaPunto"
+            >
+                <span class="instagram-icono">♪</span>
+                <span>TikTok</span>
+                <span class="instagram-usuario">@nave_a_punto</span>
+            </a>
+        </div>
 
         <p class="copyright">© 2026 NaveaPunto. Todos los derechos reservados.</p>
     </footer>
@@ -315,14 +358,14 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
     </div>
 
     <!-- NOTIFICACIÓN FLOTANTE (TOAST) -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 99999;">
         <div id="toast-carrito" class="toast align-items-center text-bg-dark border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body d-flex align-items-center gap-2">
                     <span style="font-size: 1.2rem;">🛒</span>
                     <div>
                         <strong id="toast-titulo" class="d-block text-white" style="font-size: 0.9rem;">¡Producto agregado!</strong>
-                        <small id="toast-subtitulo" class="text-muted" style="font-size: 0.8rem;">Se sumó a tu carrito de compras.</small>
+                        <small id="toast-subtitulo" class="text-muted d-block mt-1" style="font-size: 0.85rem; color: #f1f5f9 !important; font-weight: 500;">Se sumó a tu carrito de compras.</small>
                     </div>
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
