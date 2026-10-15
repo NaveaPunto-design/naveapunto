@@ -43,7 +43,7 @@
                 font-size: 0.75rem !important;
             }
 
-            /* Carrito lateral en celulares para que no se pise abajo */
+            /* Carrito lateral en celulares */
             .panel-carrito {
                 width: 100% !important;
                 max-width: 100% !important;
@@ -68,6 +68,38 @@
                 padding: 2px !important;
                 width: 100% !important;
             }
+        }
+
+        /* Estilo compacto para redes sociales en el footer */
+        .redes-footer {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .redes-footer a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 14px;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+        .redes-footer a:hover {
+            border-color: #e63946;
+            background: rgba(230, 57, 70, 0.1);
+        }
+        .redes-footer .icono-red {
+            color: #e63946;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -162,7 +194,7 @@
             <h2>CALIDAD PARA CADA DETALLE.</h2>
 
             <div class="lista-marcas">
-                <span>TOXIC SHINE</span>
+                <span>K78</span>
                 <span>Y MÁS MARCAS</span>
             </div>
         </section>
@@ -218,29 +250,27 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
 
         <p>Todo para cuidar tu auto, en un solo lugar.</p>
 
-        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px;">
+        <div class="redes-footer">
             <a
                 href="https://www.instagram.com/nave_a_punto/"
-                class="instagram-enlace"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visitar Instagram"
             >
-                <span class="instagram-icono">◎</span>
+                <span class="icono-red">◎</span>
                 <span>Instagram</span>
-                <span class="instagram-usuario">@nave_a_punto</span>
+                <span style="opacity: 0.6; font-size: 0.75rem;">@nave_a_punto</span>
             </a>
 
             <a
                 href="https://www.tiktok.com/@nave.apunto?_r=1&_t=ZS-9AaARXAE15A"
-                class="instagram-enlace"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visitar TikTok"
             >
-                <span class="instagram-icono">♪</span>
+                <span class="icono-red">♪</span>
                 <span>TikTok</span>
-                <span class="instagram-usuario">@nave.apunto</span>
+                <span style="opacity: 0.6; font-size: 0.75rem;">@nave.apunto</span>
             </a>
         </div>
 
