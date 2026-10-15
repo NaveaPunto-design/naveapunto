@@ -1471,3 +1471,8 @@ body.modal-producto-abierto {
         text-transform: uppercase !important;
     }
 }
+/* Espaciado de seguridad para el texto de stock */
+.producto-stock {
+    letter-spacing: 0.5px !important;
+    word-spacing: 3px !important;
+}
