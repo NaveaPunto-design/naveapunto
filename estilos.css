@@ -1414,12 +1414,22 @@ body.modal-producto-abierto {
         padding: 15px !important;
         border-top: 1px solid #1f293d !important;
         z-index: 20 !important;
+
     }
 }
-/* Ajustar el título principal en celulares para que no quede gigante */
+/* Arreglar la caja decorativa de la portada en celulares para que no tape ni quede mal */
 @media (max-width: 768px) {
-    .portada-contenido h1 {
-        font-size: 1.8rem !important;
-        line-height: 1.2 !important;
+    .portada {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 30px 15px !important;
+    }
+    .portada-decoracion {
+        margin-top: 20px !important;
+        width: 100% !important;
+        padding: 15px !important;
+    }
+    .portada-decoracion span {
+        font-size: 1.5rem !important;
     }
 }
