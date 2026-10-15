@@ -1416,3 +1416,10 @@ body.modal-producto-abierto {
         z-index: 20 !important;
     }
 }
+/* Ajustar el título principal en celulares para que no quede gigante */
+@media (max-width: 768px) {
+    .portada-contenido h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+}
