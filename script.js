@@ -422,8 +422,6 @@ function alternarCarrito(abrir) {
 }
 
 if (abrirCarrito) abrirCarrito.addEventListener("click", () => alternarCarrito(true));
-if (cerrar) { ... } // (Asegurate de que no quede esto suelto)
-
 if (cerrarCarrito) cerrarCarrito.addEventListener("click", () => alternarCarrito(false));
 if (fondoCarrito) {
     fondoCarrito.addEventListener("click", (e) => {
