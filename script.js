@@ -1,4 +1,4 @@
-// LISTA DE PRODUCTOS Y COMBOS FINALES DE LA PLANILLA
+// LISTA DE PRODUCTOS Y COMBOS CON SUS FOTOS OFICIALES
 let productos = [
     {
         id: 1,
@@ -7,9 +7,9 @@ let productos = [
         categoria: "lavado",
         precio: 5500,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-12 at 4.36.02 PM_2.jpeg",
         descripcion: "Shampoo con PH neutro (código 301) que limpia sin dañar tratamientos previos ni ceras.",
-        uso: "Lavado exterior seguro de la carrocería.",
+        uso: "Lavado exterior seguro de la carrocería[cite: 7].",
         aplicacion: "Diluir en agua según instrucciones, lavar con guante de microfibra y enjuagar."
     },
     {
@@ -19,9 +19,9 @@ let productos = [
         categoria: "aromatizantes",
         precio: 3700,
         disponibles: 8,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM_2.jpeg",
         descripcion: "Aromatizante ambiental (código 106) de alta duración con fragancia Sport Car Essence.",
-        uso: "Perfumar el habitáculo del vehículo.",
+        uso: "Perfumar el habitáculo del vehículo[cite: 9].",
         aplicacion: "Pulverizar en las alfombras o zonas textiles manteniendo distancia."
     },
     {
@@ -31,9 +31,9 @@ let productos = [
         categoria: "limpieza",
         precio: 6800,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM_2.jpeg",
         descripcion: "Limpiador multipropósito de alta eficiencia (código 321) para eliminar suciedad difícil.",
-        uso: "Limpieza profunda de interiores, paneles y llantas.",
+        uso: "Limpieza profunda de interiores, paneles y llantas[cite: 9].",
         aplicacion: "Pulverizar sobre la superficie, remover con cepillo o pincel y retirar con microfibra."
     },
     {
@@ -43,9 +43,9 @@ let productos = [
         categoria: "interior",
         precio: 12200,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM_2.jpeg",
         descripcion: "Silicona aromatizada ideal (código 202) para restaurar el brillo y proteger plásticos y tableros.",
-        uso: "Protección y brillo de plásticos interiores.",
+        uso: "Protección y brillo de plásticos interiores[cite: 9].",
         aplicacion: "Aplicar con un paño de microfibra limpio y dejar secar."
     },
     {
@@ -55,9 +55,9 @@ let productos = [
         categoria: "proteccion",
         precio: 6600,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM (1)_2.jpeg",
         descripcion: "Cera automotriz Autobrillo (código 402) de gran durabilidad que otorga un brillo extremo.",
-        uso: "Protección de la laca y acabado espejo.",
+        uso: "Protección de la laca y acabado espejo[cite: 8].",
         aplicacion: "Aplicar en secciones, dejar secar unos minutos y lustrar con microfibra."
     },
     {
@@ -67,9 +67,9 @@ let productos = [
         categoria: "accesorios",
         precio: 6000,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.10 PM_2.jpeg",
         descripcion: "Esponja de microfibra (código 606) de doble acción para un lavado seguro sin rayas.",
-        uso: "Lavado general y remoción de suciedad.",
+        uso: "Lavado general y remoción de suciedad[cite: 10].",
         aplicacion: "Usar con abundante shampoo diluido."
     },
     {
@@ -79,9 +79,9 @@ let productos = [
         categoria: "accesorios",
         precio: 10100,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.10 PM_2.jpeg",
         descripcion: "Cepillo de mango corto (código 651) especializado para llegar a rincones difíciles.",
-        uso: "Limpieza de llantas, alfombras y plásticos.",
+        uso: "Limpieza de llantas, alfombras y plásticos[cite: 10].",
         aplicacion: "Utilizar junto con el limpiador APC o shampoo."
     },
     {
@@ -91,9 +91,9 @@ let productos = [
         categoria: "microfibras",
         precio: 4800,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM (1)_2.jpeg",
         descripcion: "Pack de 3 paños de microfibra multiuso (código 614).",
-        uso: "Limpieza de interiores, ceras y detalles.",
+        uso: "Limpieza de interiores, ceras y detalles[cite: 8].",
         aplicacion: "Utilizar limpia y seca o con productos específicos."
     },
     {
@@ -103,9 +103,9 @@ let productos = [
         categoria: "accesorios",
         precio: 2500,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM_2.jpeg",
         descripcion: "Pack x2 de pads aplicadores de poliespuma (código 611).",
-        uso: "Aplicación uniforme de ceras y acondicionadores.",
+        uso: "Aplicación uniforme de ceras y acondicionadores[cite: 9].",
         aplicacion: "Aplicar el producto sobre el pad y esparcir suavemente."
     },
     {
@@ -115,12 +115,12 @@ let productos = [
         categoria: "microfibras",
         precio: 8000,
         disponibles: 6,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.10 PM_2.jpeg",
         descripcion: "Paño de secado de alta absorción (código 604) diseñado para no dejar marcas.",
-        uso: "Secado rápido y seguro de vidrios y carrocería.",
+        uso: "Secado rápido y seguro de vidrios y carrocería[cite: 10].",
         aplicacion: "Deslizar suavemente sobre la superficie húmeda."
     },
-    // COMBOS OFICIALES
+    // COMBOS OFICIALES CON FOTOS
     {
         id: 11,
         nombre: "Combo Exterior Básico",
@@ -128,10 +128,10 @@ let productos = [
         categoria: "lavado",
         precio: 28000,
         disponibles: 5,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.10 PM_2.jpeg",
         esCombo: true,
         descripcion: "Ph neutro + Esponja + Paño de secado + Cepillo mango corto.",
-        uso: "Kit completo y especializado para realizar un lavado exterior eficiente, seguro y sin dejar marcas.",
+        uso: "Kit completo y especializado para realizar un lavado exterior eficiente, seguro y sin dejar marcas[cite: 10].",
         aplicacion: "Utilizar cada elemento respetando su función de lavado, remoción en rincones y secado final."
     },
     {
@@ -141,10 +141,10 @@ let productos = [
         categoria: "interior",
         precio: 24000,
         disponibles: 5,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM_2.jpeg",
         esCombo: true,
         descripcion: "APC + Silicona + Pad x2 + Aromatizante.",
-        uso: "Kit integral para la limpieza profunda, restauración de brillo, protección y perfumado del habitáculo.",
+        uso: "Kit integral para la limpieza profunda, restauración de brillo, protección y perfumado del habitáculo[cite: 9].",
         aplicacion: "Aplicar el APC para limpiar, la silicona para proteger plásticos, los pads y el aromatizante."
     },
     {
@@ -154,10 +154,10 @@ let productos = [
         categoria: "proteccion",
         precio: 10900,
         disponibles: 5,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM (1)_2.jpeg",
         esCombo: true,
         descripcion: "Cera Autobrillo + Paño microfibra x3.",
-        uso: "Kit diseñado para lograr un acabado espejo profesional y una alta protección duradera sobre la laca.",
+        uso: "Kit diseñado para lograr un acabado espejo profesional y una alta protección duradera sobre la laca[cite: 8].",
         aplicacion: "Aplicar la cera por secciones y lustrar cuidadosamente utilizando los paños de microfibra."
     },
     {
@@ -167,10 +167,10 @@ let productos = [
         categoria: "proteccion",
         precio: 63000,
         disponibles: 5,
-        imagen: "logo.jpeg",
+        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM_2.jpeg",
         esCombo: true,
         descripcion: "Incluye los 10 productos completos de la línea.",
-        uso: "Mantenimiento profesional absoluto y cuidado integral de todo el vehículo de punta a punta.",
+        uso: "Mantenimiento profesional absoluto y cuidado integral de todo el vehículo de punta a punta[cite: 9].",
         aplicacion: "Combinar todos los artículos del kit según los requerimientos de lavado, interior y protección."
     }
 ];
