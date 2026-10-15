@@ -1,112 +1,177 @@
-// LISTA DE PRODUCTOS Y COMBOS OFICIALES
+// LISTA DE PRODUCTOS Y COMBOS FINALES DE LA PLANILLA
 let productos = [
     {
         id: 1,
-        nombre: "Aromatiz. Ambiental Sport Car Essence",
-        marca: "K78",
-        categoria: "aromatizantes",
-        precio: 3250,
-        disponibles: 8,
-        imagen: "logo.jpeg",
-        descripcion: "Aromatizante ambiental de alta duración con fragancia Sport Car Essence.",
-        uso: "Perfumar el habitáculo del vehículo.",
-        aplicacion: "Pulverizar en las alfombras o zonas textiles manteniendo distancia."
-    },
-    {
-        id: 2,
-        nombre: "Silicona Aromatiz. Para interior, plast. y alfombras",
-        marca: "K78",
-        categoria: "interior",
-        precio: 6000,
-        disponibles: 6,
-        imagen: "logo.jpeg",
-        descripcion: "Silicona aromatizada ideal para restaurar el brillo y proteger plásticos y tableros.",
-        uso: "Protección y brillo de plásticos interiores.",
-        aplicacion: "Aplicar con un paño de microfibra limpio y dejar secar."
-    },
-    {
-        id: 3,
-        nombre: "Car Wash - Lava autos PH Neutro",
+        nombre: "Ph neutro car wash",
         marca: "K78",
         categoria: "lavado",
         precio: 5500,
         disponibles: 6,
         imagen: "logo.jpeg",
-        descripcion: "Shampoo con PH neutro que limpia sin dañar tratamientos previos ni ceras.",
+        descripcion: "Shampoo con PH neutro (código 301) que limpia sin dañar tratamientos previos ni ceras.",
         uso: "Lavado exterior seguro de la carrocería.",
         aplicacion: "Diluir en agua según instrucciones, lavar con guante de microfibra y enjuagar."
     },
     {
-        id: 4,
-        nombre: "APC- ALL PURPOSE - Limpiador Multiproposito",
+        id: 2,
+        nombre: "Aromatizantes ambiental Sport car essence",
+        marca: "K78",
+        categoria: "aromatizantes",
+        precio: 3700,
+        disponibles: 8,
+        imagen: "logo.jpeg",
+        descripcion: "Aromatizante ambiental (código 106) de alta duración con fragancia Sport Car Essence.",
+        uso: "Perfumar el habitáculo del vehículo.",
+        aplicacion: "Pulverizar en las alfombras o zonas textiles manteniendo distancia."
+    },
+    {
+        id: 3,
+        nombre: "Apc Limpiador multipropósito (interior y exterior)",
         marca: "K78",
         categoria: "limpieza",
         precio: 6800,
         disponibles: 6,
         imagen: "logo.jpeg",
-        descripcion: "Limpiador multipropósito de alta eficiencia para eliminar suciedad difícil.",
+        descripcion: "Limpiador multipropósito de alta eficiencia (código 321) para eliminar suciedad difícil.",
         uso: "Limpieza profunda de interiores, paneles y llantas.",
         aplicacion: "Pulverizar sobre la superficie, remover con cepillo o pincel y retirar con microfibra."
     },
     {
-        id: 5,
-        nombre: "Car Wax Cera Auto.",
+        id: 4,
+        nombre: "Silicona Aromatizada para interiores plásticos y alfombras",
         marca: "K78",
-        categoria: "proteccion",
+        categoria: "interior",
         precio: 12200,
         disponibles: 6,
         imagen: "logo.jpeg",
-        descripcion: "Cera automotriz de gran durabilidad que otorga un brillo extremo y protección.",
+        descripcion: "Silicona aromatizada ideal (código 202) para restaurar el brillo y proteger plásticos y tableros.",
+        uso: "Protección y brillo de plásticos interiores.",
+        aplicacion: "Aplicar con un paño de microfibra limpio y dejar secar."
+    },
+    {
+        id: 5,
+        nombre: "Car wax cera Autobrillo",
+        marca: "K78",
+        categoria: "proteccion",
+        precio: 6600,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Cera automotriz Autobrillo (código 402) de gran durabilidad que otorga un brillo extremo.",
         uso: "Protección de la laca y acabado espejo.",
         aplicacion: "Aplicar en secciones, dejar secar unos minutos y lustrar con microfibra."
     },
     {
         id: 6,
-        nombre: "Microfibra Secado - Tipo Waffle",
-        marca: "K78",
-        categoria: "microfibras",
-        precio: 3700,
-        disponibles: 8,
-        imagen: "logo.jpeg",
-        descripcion: "Paño de secado en formato waffle diseñado para no dejar marcas ni rayas.",
-        uso: "Secado rápido y seguro de vidrios y carrocería.",
-        aplicacion: "Deslizar suavemente sobre la superficie húmeda sin hacer presión excesiva."
-    },
-    {
-        id: 7,
-        nombre: "Esponja Microfibra Dual",
+        nombre: "Esponja Microfibra",
         marca: "K78",
         categoria: "accesorios",
-        precio: 4500,
+        precio: 6000,
         disponibles: 6,
         imagen: "logo.jpeg",
-        descripcion: "Esponja revestida en microfibra de doble acción para un lavado seguro.",
-        uso: "Lavado general y remoción de insectos.",
+        descripcion: "Esponja de microfibra (código 606) de doble acción para un lavado seguro sin rayas.",
+        uso: "Lavado general y remoción de suciedad.",
         aplicacion: "Usar con abundante shampoo diluido."
     },
     {
-        id: 8,
-        nombre: "Pack 3 unid. - Microfibra Multi.",
+        id: 7,
+        nombre: "Cepillo mango corto",
         marca: "K78",
-        categoria: "microfibras",
-        precio: 7500,
+        categoria: "accesorios",
+        precio: 10100,
         disponibles: 6,
         imagen: "logo.jpeg",
-        descripcion: "Pack de 3 microfibras multiuso de diferentes colores para evitar contaminación cruzada.",
+        descripcion: "Cepillo de mango corto (código 651) especializado para llegar a rincones difíciles.",
+        uso: "Limpieza de llantas, alfombras y plásticos.",
+        aplicacion: "Utilizar junto con el limpiador APC o shampoo."
+    },
+    {
+        id: 8,
+        nombre: "Paño microfibra Multiuso (x3)",
+        marca: "K78",
+        categoria: "microfibras",
+        precio: 4800,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Pack de 3 paños de microfibra multiuso (código 614).",
         uso: "Limpieza de interiores, ceras y detalles.",
         aplicacion: "Utilizar limpia y seca o con productos específicos."
     },
     {
         id: 9,
-        nombre: "Wheel & Tire Brush - Cepillo Ruedas y Llantas",
+        nombre: "Pad Aplicador poliespuma pack (x2)",
         marca: "K78",
         categoria: "accesorios",
-        precio: 5900,
+        precio: 2500,
         disponibles: 6,
         imagen: "logo.jpeg",
-        descripcion: "Cepillo especializado para llegar a los rincones más difíciles de llantas y cubiertas.",
-        uso: "Limpieza de llantas y neumáticos.",
-        aplicacion: "Utilizar junto con el limpiador APC o shampoo."
+        descripcion: "Pack x2 de pads aplicadores de poliespuma (código 611).",
+        uso: "Aplicación uniforme de ceras y acondicionadores.",
+        aplicacion: "Aplicar el producto sobre el pad y esparcir suavemente."
+    },
+    {
+        id: 10,
+        nombre: "Paño de secado",
+        marca: "K78",
+        categoria: "microfibras",
+        precio: 8000,
+        disponibles: 6,
+        imagen: "logo.jpeg",
+        descripcion: "Paño de secado de alta absorción (código 604) diseñado para no dejar marcas.",
+        uso: "Secado rápido y seguro de vidrios y carrocería.",
+        aplicacion: "Deslizar suavemente sobre la superficie húmeda."
+    },
+    // COMBOS OFICIALES DE LA PLANILLA
+    {
+        id: 11,
+        nombre: "Combo Exterior Básico",
+        marca: "K78",
+        categoria: "lavado",
+        precio: 28000,
+        disponibles: 5,
+        imagen: "logo.jpeg",
+        esCombo: true,
+        descripcion: "Ph neutro + Esponja + Paño de secado + Cepillo mango corto.",
+        uso: "Kit completo para el lavado exterior eficiente.",
+        aplicacion: "Utilizar cada producto según las instrucciones específicas de lavado."
+    },
+    {
+        id: 12,
+        nombre: "Combo Interior Premium",
+        marca: "K78",
+        categoria: "interior",
+        precio: 24000,
+        disponibles: 5,
+        imagen: "logo.jpeg",
+        esCombo: true,
+        descripcion: "APC + Silicona + Pad x2 + Aromatizante.",
+        uso: "Kit completo para limpieza, protección y perfumado interior.",
+        aplicacion: "Aplicar en tableros y plásticos interiores."
+    },
+    {
+        id: 13,
+        nombre: "Combo Brillo y Protección",
+        marca: "K78",
+        categoria: "proteccion",
+        precio: 10900,
+        disponibles: 5,
+        imagen: "logo.jpeg",
+        esCombo: true,
+        descripcion: "Cera Autobrillo + Paño microfibra x3.",
+        uso: "Kit para lograr un acabado espejo y protección duradera de la laca.",
+        aplicacion: "Aplicar la cera y lustrar con los paños de microfibra."
+    },
+    {
+        id: 14,
+        nombre: "Combo Full Detailing",
+        marca: "K78",
+        categoria: "proteccion",
+        precio: 63000,
+        disponibles: 5,
+        imagen: "logo.jpeg",
+        esCombo: true,
+        descripcion: "Incluye los 10 productos completos de la línea.",
+        uso: "Mantenimiento integral y profesional de todo el vehículo.",
+        aplicacion: "Combinar todos los artículos según las necesidades de lavado y detailing."
     }
 ];
 
@@ -156,6 +221,7 @@ function mostrarProductos(lista) {
         const tarjeta = document.createElement("div");
         tarjeta.classList.add("tarjeta-producto");
 
+        const badgeCombo = p.esCombo ? `<span class="badge-combo">COMBO</span>` : "";
         const disponibles = Number(p.disponibles ?? 0);
         const agotado = disponibles <= 0;
 
@@ -164,6 +230,7 @@ function mostrarProductos(lista) {
             : `${disponibles} ${disponibles === 1 ? "unidad disponible" : "unidades disponibles"}`;
 
         tarjeta.innerHTML = `
+            ${badgeCombo}
             <div class="producto-imagen-contenedor" onclick="abrirDetallesProducto(${p.id})">
                 <img src="${p.imagen}" alt="${p.nombre}" class="producto-imagen" loading="lazy">
             </div>
