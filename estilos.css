@@ -1450,3 +1450,24 @@ body.modal-producto-abierto {
         opacity: 0.9 !important;
     }
 }
+/* Hacer que 'NAVE A PUNTO' se vea como la marca principal en celulares */
+@media (max-width: 768px) {
+    .portada-decoracion span {
+        font-size: 1.8rem !important;
+        font-weight: 900 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(230, 57, 70, 0.4) !important;
+        display: block !important;
+        margin-bottom: 6px !important;
+    }
+
+    .portada-decoracion p {
+        font-size: 0.8rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        color: #e63946 !important; /* Rojo de la marca */
+        text-transform: uppercase !important;
+    }
+}
