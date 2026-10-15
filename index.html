@@ -13,16 +13,23 @@
 
     <link rel="stylesheet" href="estilos.css">
 
-    <!-- AJUSTES ESPECÍFICOS DE CELULAR Y TOAST -->
+    <!-- AJUSTES ESPECÍFICOS DE CELULAR Y TOAST SOBRIO -->
     <style>
-        /* Acomodar color de la notificación */
+        /* Notificación flotante (Toast) sobria y elegante */
         #toast-carrito {
-            background-color: #111 !important;
-            border: 1px solid #333 !important;
+            background-color: #0d1117 !important;
+            border: 1px solid #1f293d !important;
+            border-radius: 6px !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
+        }
+        #toast-titulo {
+            letter-spacing: 1px !important;
+            text-transform: uppercase !important;
+            font-size: 0.82rem !important;
         }
         #toast-subtitulo {
-            color: #4da6ff !important;
-            font-weight: 600 !important;
+            color: #8a99ad !important;
+            font-size: 0.78rem !important;
         }
 
         @media (max-width: 768px) {
@@ -119,7 +126,7 @@
         </nav>
 
         <button class="boton-carrito" id="abrir-carrito">
-            🛒 Carrito <span id="cantidad-carrito">0</span>
+            CARRITO (<span id="cantidad-carrito">0</span>)
         </button>
     </header>
 
@@ -143,14 +150,14 @@
                 </a>
             </div>
 
-           <div class="portada-decoracion" style="background: transparent; border: none; padding: 10px 0; box-shadow: none; text-align: center;">
-    <span style="font-size: 1.6rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 4px !important; color: #ffffff !important; display: block; line-height: 1.2; font-family: system-ui, -apple-system, sans-serif;">
-        NAVE A PUNTO
-    </span>
-    <p style="font-size: 0.7rem !important; font-weight: 600 !important; letter-spacing: 3px !important; color: #8a99ad !important; margin-top: 6px; margin-bottom: 0; text-transform: uppercase;">
-        CUIDADO INTEGRAL · CALIDAD · BRILLO ÚNICO
-    </p>
-</div>
+            <div class="portada-decoracion" style="background: transparent; border: none; padding: 10px 0; box-shadow: none; text-align: center;">
+                <span style="font-size: 1.6rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 4px !important; color: #ffffff !important; display: block; line-height: 1.2; font-family: system-ui, -apple-system, sans-serif;">
+                    NAVE A PUNTO
+                </span>
+                <p style="font-size: 0.7rem !important; font-weight: 600 !important; letter-spacing: 3px !important; color: #8a99ad !important; margin-top: 6px; margin-bottom: 0; text-transform: uppercase;">
+                    CUIDADO INTEGRAL · CALIDAD · BRILLO ÚNICO
+                </p>
+            </div>
         </section>
 
         <section class="beneficios">
@@ -194,16 +201,16 @@
         </section>
 
         <section class="seccion-marcas" id="marcas">
-    <p class="etiqueta">NUESTROS PILARES</p>
-    <h2>CALIDAD PARA CADA DETALLE.</h2>
+            <p class="etiqueta">NUESTROS PILARES</p>
+            <h2>CALIDAD PARA CADA DETALLE.</h2>
 
-    <div class="lista-marcas" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-        <span>🔥 LÍNEA K78 OFICIAL</span>
-        <span>⚡ ENVÍOS Y ENTREGAS</span>
-        <span>🛡️ PRODUCTOS 100% ORIGINALES</span>
-        <span>💬 ASESORAMIENTO DIRECTO</span>
-    </div>
-</section>
+            <div class="lista-marcas" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <span>🔥 LÍNEA K78 OFICIAL</span>
+                <span>⚡ ENVÍOS Y ENTREGAS</span>
+                <span>🛡️ PRODUCTOS 100% ORIGINALES</span>
+                <span>💬 ASESORAMIENTO DIRECTO</span>
+            </div>
+        </section>
         
         <section class="seccion-quienes" id="quienes-somos">
             <div class="quienes-contenido">
@@ -283,19 +290,23 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
         <p class="copyright">© 2026 NaveaPunto. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- CARRITO LATERAL SOBRIO -->
     <div class="fondo-carrito" id="fondo-carrito">
         <aside class="panel-carrito">
             <div class="cabecera-carrito">
-                <h2>Tu carrito</h2>
-                <button id="cerrar-carrito" aria-label="Cerrar carrito">✕</button>
+                <h2>TU CARRITO</h2>
+                <button id="cerrar-carrito" aria-label="Cerrar carrito">CERRAR ✕</button>
             </div>
 
             <div id="items-carrito">
-                <p class="carrito-vacio">Todavía no agregaste productos.</p>
+                <p class="carrito-vacio">El carrito está vacío.</p>
             </div>
 
             <div class="total-carrito">
-                <p>Total: <strong id="total-carrito">$0</strong></p>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span style="font-size: 0.85rem; letter-spacing: 1.5px; font-weight: 700; color: #8a99ad;">TOTAL:</span>
+                    <strong id="total-carrito" style="font-size: 1.2rem; color: #fff;">$0</strong>
+                </div>
                 <button id="finalizar-compra">PEDIR POR WHATSAPP ↗</button>
             </div>
         </aside>
@@ -362,10 +373,9 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
         <div id="toast-carrito" class="toast align-items-center text-bg-dark border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="d-flex">
                 <div class="toast-body d-flex align-items-center gap-2">
-                    <span style="font-size: 1.2rem;">🛒</span>
                     <div>
-                        <strong id="toast-titulo" class="d-block text-white" style="font-size: 0.9rem;">¡Producto agregado!</strong>
-                        <small id="toast-subtitulo" class="d-block mt-1" style="font-size: 0.82rem;">Se sumó a tu carrito de compras.</small>
+                        <strong id="toast-titulo" class="d-block text-white">¡PRODUCTO AGREGADO!</strong>
+                        <small id="toast-subtitulo" class="d-block mt-1">Se sumó correctamente a tu carrito.</small>
                     </div>
                 </div>
                 <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
