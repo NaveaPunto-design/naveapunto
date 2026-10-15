@@ -1476,3 +1476,19 @@ body.modal-producto-abierto {
     letter-spacing: 0.5px !important;
     word-spacing: 3px !important;
 }
+/* Controlar tamaño y proporción de las imágenes de productos para que no se desborden */
+.tarjeta-producto .producto-imagen-contenedor {
+    width: 100% !important;
+    height: 180px !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #0b0f17 !important;
+}
+
+.tarjeta-producto .producto-imagen {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Ajusta la imagen sin deformarla ni desbordarla */
+}
