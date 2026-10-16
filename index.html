@@ -111,7 +111,7 @@
                 <span>💬 ASESORAMIENTO DIRECTO</span>
             </div>
         </section>
-        
+
         <section class="seccion-quienes" id="quienes-somos">
             <div class="quienes-contenido">
                 <p class="etiqueta">CONOCÉ NUESTRO PROYECTO</p>
@@ -121,9 +121,10 @@
                 </h2>
 
                 <p class="quienes-texto">
-                 En NaveaPunto nos dedicamos al mundo del detailing y al cuidado automotor, ofreciendo una variedad de productos para la limpieza, protección y mantenimiento de tu vehículo.
-
-Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda. Trabajamos para brindarte soluciones que se adapten a tus necesidades, construyendo una relación basada en la calidad, el compromiso y, sobre todo, la confianza de nuestros clientes.
+                    En NaveaPunto nos dedicamos al mundo del detailing y al cuidado automotor, ofreciendo una variedad de productos para la limpieza, protección y mantenimiento de tu vehículo.
+                </p>
+                <p class="quienes-texto">
+                    Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda.
                 </p>
 
                 <div class="quienes-destacados">
@@ -157,38 +158,23 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
         <p>Todo para cuidar tu auto, en un solo lugar.</p>
 
         <div class="redes-footer">
-            <a
-                href="https://www.instagram.com/nave_a_punto/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visitar Instagram"
-            >
-                <span class="icono-red">◎</span>
-                <span>Instagram</span>
-                <span style="opacity: 0.6; font-size: 0.75rem;">@nave_a_punto</span>
+            <a href="https://www.instagram.com/nave_a_punto/" target="_blank" rel="noopener noreferrer">
+                <span>◎ Instagram</span>
             </a>
-
-            <a
-                href="https://www.tiktok.com/@nave.apunto?_r=1&_t=ZS-9AaARXAE15A"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visitar TikTok"
-            >
-                <span class="icono-red">♪</span>
-                <span>TikTok</span>
-                <span style="opacity: 0.6; font-size: 0.75rem;">@nave.apunto</span>
+            <a href="https://www.tiktok.com/@nave.apunto?_r=1&_t=ZS-9AaARXAE15A" target="_blank" rel="noopener noreferrer">
+                <span>♪ TikTok</span>
             </a>
         </div>
 
         <p class="copyright">© 2026 NaveaPunto. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- CARRITO LATERAL SOBRIO -->
+    <!-- CARRITO LATERAL -->
     <div class="fondo-carrito" id="fondo-carrito">
         <aside class="panel-carrito">
             <div class="cabecera-carrito">
                 <h2>TU CARRITO</h2>
-                <button id="cerrar-carrito" aria-label="Cerrar carrito">CERRAR ✕</button>
+                <button id="cerrar-carrito">CERRAR ✕</button>
             </div>
 
             <div id="items-carrito">
@@ -197,7 +183,7 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
 
             <div class="total-carrito">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <span style="font-size: 0.85rem; letter-spacing: 1.5px; font-weight: 700; color: #8a99ad;">TOTAL:</span>
+                    <span style="font-size: 0.85rem; font-weight: 700; color: #8a99ad;">TOTAL:</span>
                     <strong id="total-carrito" style="font-size: 1.2rem; color: #fff;">$0</strong>
                 </div>
                 <button id="finalizar-compra">PEDIR POR WHATSAPP ↗</button>
@@ -209,18 +195,8 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
     <div class="modal-producto" id="modal-producto" aria-hidden="true">
         <div class="modal-producto-fondo" id="cerrar-modal-fondo"></div>
 
-        <section
-            class="modal-producto-contenido"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="detalle-nombre"
-        >
-            <button
-                class="modal-producto-cerrar"
-                id="cerrar-modal-producto"
-                type="button"
-                aria-label="Cerrar detalles"
-            >×</button>
+        <section class="modal-producto-contenido" role="dialog">
+            <button class="modal-producto-cerrar" id="cerrar-modal-producto" type="button">×</button>
 
             <div class="modal-producto-imagen">
                 <img id="detalle-imagen" src="" alt="">
@@ -245,38 +221,27 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
                 <p class="detalle-precio" id="detalle-precio"></p>
                 <p class="detalle-stock" id="detalle-stock"></p>
 
-                <button
-                    class="detalle-boton-agregar"
-                    id="detalle-agregar"
-                    type="button"
-                >
+                <button class="detalle-boton-agregar" id="detalle-agregar" type="button">
                     AGREGAR AL CARRITO
                 </button>
-
-                <p class="detalle-aclaracion">
-                    Seguí siempre las indicaciones y precauciones del envase
-                    del producto específico.
-                </p>
             </div>
         </section>
     </div>
 
     <!-- NOTIFICACIÓN FLOTANTE (TOAST) -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 99999;">
-        <div id="toast-carrito" class="toast align-items-center text-bg-dark border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+        <div id="toast-carrito" class="toast align-items-center text-bg-dark border-0 shadow-lg" role="alert">
             <div class="d-flex">
-                <div class="toast-body d-flex align-items-center gap-2">
-                    <div>
-                        <strong id="toast-titulo" class="d-block text-white">¡PRODUCTO AGREGADO!</strong>
-                        <small id="toast-subtitulo" class="d-block mt-1">Se sumó correctamente a tu carrito.</small>
-                    </div>
+                <div class="toast-body">
+                    <strong id="toast-titulo" class="d-block text-white">¡PRODUCTO AGREGADO!</strong>
+                    <small id="toast-subtitulo" class="d-block mt-1">Se sumó correctamente a tu carrito.</small>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT PARA EL MENÚ HAMBURGUESA -->
+    <!-- SCRIPTS -->
     <script>
         const btnHamburguesa = document.getElementById("btn-hamburguesa");
         const menuNavegacion = document.getElementById("menu-navegacion");
