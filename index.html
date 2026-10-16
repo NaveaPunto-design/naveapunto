@@ -13,7 +13,7 @@
 
     <link rel="stylesheet" href="estilos.css">
 
-    <!-- AJUSTES ESPECÍFICOS DE CELULAR Y TOAST SOBRIO -->
+    <!-- ESTILOS DE MEJORA MÓVIL (MENÚ HAMBURGUESA Y HEADER PROFESIONAL) -->
     <style>
         /* Notificación flotante (Toast) sobria y elegante */
         #toast-carrito {
@@ -32,48 +32,132 @@
             font-size: 0.78rem !important;
         }
 
+        /* HEADER MODERNO Y MENÚ HAMBURGUESA */
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: #0a0d14;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo-imagen img {
+            max-height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .header-acciones {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* Ícono de Carrito Minimalista */
+        .boton-carrito-icono {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.25rem;
+            position: relative;
+            cursor: pointer;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
+        }
+        .boton-carrito-icono:hover {
+            color: #e63946;
+        }
+        #cantidad-carrito {
+            position: absolute;
+            top: -2px;
+            right: -6px;
+            background-color: #e63946;
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 1px 5px;
+            border-radius: 50%;
+            line-height: 1;
+        }
+
+        /* Botón Hamburguesa */
+        .menu-hamburguesa {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 4px;
+        }
+
+        /* Menú desplegable móvil / Navegación */
+        .navegacion {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .navegacion a {
+            color: #c9d1d9;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+        .navegacion a:hover {
+            color: #e63946;
+        }
+
         @media (max-width: 768px) {
-            /* Header más finito en móvil */
             .encabezado {
-                padding: 6px 12px !important;
-                min-height: 48px !important;
+                padding: 10px 16px;
             }
-            .logo-imagen img {
-                max-height: 32px !important;
+            .navegacion {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #0d1117;
+                flex-direction: column;
+                padding: 20px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+                z-index: 999;
+            }
+            .navegacion.activo {
+                display: flex;
             }
             .navegacion a {
-                font-size: 0.72rem !important;
-                padding: 2px 4px !important;
-            }
-            .boton-carrito {
-                padding: 4px 8px !important;
-                font-size: 0.75rem !important;
+                padding: 10px 20px;
+                width: 100%;
+                text-align: center;
+                font-size: 0.9rem;
             }
 
-            /* Carrito lateral en celulares */
-            .panel-carrito {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: 100% !important;
-                display: flex !important;
-                flex-direction: column !important;
-            }
-            #items-carrito {
-                flex: 1 !important;
-                overflow-y: auto !important;
-                padding-bottom: 20px !important;
-            }
-            .total-carrito {
-                padding-bottom: 25px !important;
-            }
-
-            /* Grilla de productos */
+            /* Grilla de productos en celdas de 2 */
             .grilla-productos, #grilla-productos {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
-                gap: 6px !important;
-                padding: 2px !important;
+                gap: 8px !important;
+                padding: 4px !important;
                 width: 100% !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-hamburguesa {
+                display: none !important;
             }
         }
 
@@ -118,16 +202,23 @@
             <img src="logo.jpeg" alt="Nave A Punto Detailing">
         </a>
 
-        <nav class="navegacion">
-            <a href="#inicio">Inicio</a>
-            <a href="#productos">Productos</a>
-            <a href="#marcas">Marcas</a>
-            <a href="#quienes-somos">Quiénes somos</a>
+        <nav class="navegacion" id="menu-navegacion">
+            <a href="#inicio" onclick="cerrarMenuMovil()">Inicio</a>
+            <a href="#productos" onclick="cerrarMenuMovil()">Productos</a>
+            <a href="#marcas" onclick="cerrarMenuMovil()">Marcas</a>
+            <a href="#quienes-somos" onclick="cerrarMenuMovil()">Quiénes somos</a>
         </nav>
 
-        <button class="boton-carrito" id="abrir-carrito">
-            CARRITO (<span id="cantidad-carrito">0</span>)
-        </button>
+        <div class="header-acciones">
+            <button class="boton-carrito-icono" id="abrir-carrito" aria-label="Abrir carrito">
+                🛒
+                <span id="cantidad-carrito">0</span>
+            </button>
+
+            <button class="menu-hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
+                ☰
+            </button>
+        </div>
     </header>
 
     <main>
@@ -148,15 +239,6 @@
                 <a href="#productos" class="boton-principal">
                     EXPLORAR PRODUCTOS ↗
                 </a>
-            </div>
-
-            <div class="portada-decoracion" style="background: transparent; border: none; padding: 10px 0; box-shadow: none; text-align: center;">
-                <span style="font-size: 1.6rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 4px !important; color: #ffffff !important; display: block; line-height: 1.2; font-family: system-ui, -apple-system, sans-serif;">
-                    NAVE A PUNTO
-                </span>
-                <p style="font-size: 0.7rem !important; font-weight: 600 !important; letter-spacing: 3px !important; color: #8a99ad !important; margin-top: 6px; margin-bottom: 0; text-transform: uppercase;">
-                    CUIDADO INTEGRAL · CALIDAD · BRILLO ÚNICO
-                </p>
             </div>
         </section>
 
@@ -383,7 +465,23 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
         </div>
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- SCRIPTS PARA EL MENÚ HAMBURGUESA Y FUNCIONAMIENTO -->
+    <script>
+        const btnHamburguesa = document.getElementById("btn-hamburguesa");
+        const menuNavegacion = document.getElementById("menu-navegacion");
+
+        if (btnHamburguesa && menuNavegacion) {
+            btnHamburguesa.addEventListener("click", () => {
+                menuNavegacion.classList.toggle("activo");
+            });
+        }
+
+        function cerrarMenuMovil() {
+            if (menuNavegacion) {
+                menuNavegacion.classList.remove("activo");
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
