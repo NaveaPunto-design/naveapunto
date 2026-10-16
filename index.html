@@ -17,7 +17,7 @@
 <body>
 
     <header class="encabezado">
-        <a href="#" class="logo-imagen">
+        <a href="#inicio" class="logo-imagen">
             <img src="logo.jpeg" alt="Nave A Punto Detailing">
         </a>
 
@@ -41,6 +41,7 @@
     </header>
 
     <main>
+        <!-- HERO / PORTADA CINEMATOGRÁFICA -->
         <section class="portada" id="inicio">
             <div class="portada-contenido">
                 <p class="etiqueta">NAVE A PUNTO</p>
@@ -50,8 +51,8 @@
                     DE TU AUTO AL <span>SIGUIENTE NIVEL</span>
                 </h1>
 
-                <p class="descripcion" style="color: #e63946; font-weight: 700; letter-spacing: 1px;">
-                    Detailing Store
+                <p class="descripcion">
+                    Detailing Store Oficial
                 </p>
 
                 <a href="#productos" class="boton-principal">
@@ -60,20 +61,21 @@
             </div>
         </section>
 
+        <!-- BARRA DE BENEFICIOS MODERNA -->
         <section class="beneficios">
             <div>✦ PRODUCTOS SELECCIONADOS</div>
             <div>✦ MARCAS DE DETAILING</div>
             <div>✦ PEDIDOS FÁCILES POR WHATSAPP</div>
         </section>
 
+        <!-- SECCIÓN DE PRODUCTOS Y CATÁLOGO -->
         <section class="seccion-productos" id="productos">
             <div class="titulo-seccion">
                 <div>
                     <p class="etiqueta">NUESTRO CATÁLOGO</p>
                     <h2>PRODUCTOS <span>DESTACADOS.</span></h2>
                 </div>
-
-                <p>Todo para el cuidado de tu vehículo.</p>
+                <p>Todo para el cuidado y protección de tu vehículo.</p>
             </div>
 
             <div class="filtros">
@@ -91,20 +93,21 @@
                 type="search"
                 id="buscar-productos"
                 class="buscador-productos"
-                placeholder="Buscar productos..."
+                placeholder="Buscar por producto o marca..."
                 aria-label="Buscar productos"
             />
 
             <div class="grilla-productos" id="grilla-productos">
-                <!-- Los productos se agregarán con JavaScript -->
+                <!-- Los productos se inyectan dinámicamente mediante script.js -->
             </div>
         </section>
 
+        <!-- SECCIÓN MARCAS / PILARES -->
         <section class="seccion-marcas" id="marcas">
             <p class="etiqueta">NUESTROS PILARES</p>
             <h2>CALIDAD PARA CADA DETALLE.</h2>
 
-            <div class="lista-marcas" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+            <div class="lista-marcas">
                 <span>🔥 LÍNEA K78 OFICIAL</span>
                 <span>⚡ ENVÍOS Y ENTREGAS</span>
                 <span>🛡️ PRODUCTOS 100% ORIGINALES</span>
@@ -112,6 +115,7 @@
             </div>
         </section>
         
+        <!-- SECCIÓN QUIÉNES SOMOS -->
         <section class="seccion-quienes" id="quienes-somos">
             <div class="quienes-contenido">
                 <p class="etiqueta">CONOCÉ NUESTRO PROYECTO</p>
@@ -121,16 +125,10 @@
                 </h2>
 
                 <p class="quienes-texto">
-                 En NaveaPunto nos dedicamos al mundo del detailing y al cuidado automotor, ofreciendo una variedad de productos para la limpieza, protección y mantenimiento de tu vehículo.
-
-Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda. Trabajamos para brindarte soluciones que se adapten a tus necesidades, construyendo una relación basada en la calidad, el compromiso y, sobre todo, la confianza de nuestros clientes.
+                    En NaveaPunto nos dedicamos al mundo del detailing y al cuidado automotor, ofreciendo una variedad de productos para la limpieza, protección y mantenimiento de tu vehículo. Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda.
                 </p>
-
                 <p class="quienes-texto">
-                    Queremos que encuentres en un solo lugar distintas
-                    opciones para el cuidado de tu auto, con un catálogo
-                    fácil de explorar y una forma sencilla de realizar
-                    tus pedidos.
+                    Trabajamos para brindarte soluciones que se adapten a tus necesidades, construyendo una relación basada en la calidad, el compromiso y, sobre todo, la confianza de nuestros clientes.
                 </p>
 
                 <div class="quienes-destacados">
@@ -156,6 +154,7 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="pie">
         <a href="#inicio" class="logo-imagen">
             <img src="logo.jpeg" alt="Nave A Punto Detailing">
@@ -175,12 +174,12 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
         <p class="copyright">© 2026 NaveaPunto. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- CARRITO LATERAL -->
+    <!-- CARRITO LATERAL (DRAWER) -->
     <div class="fondo-carrito" id="fondo-carrito">
         <aside class="panel-carrito">
             <div class="cabecera-carrito">
                 <h2>TU CARRITO</h2>
-                <button id="cerrar-carrito">CERRAR ✕</button>
+                <button id="cerrar-carrito" aria-label="Cerrar carrito">CERRAR ✕</button>
             </div>
 
             <div id="items-carrito">
@@ -192,19 +191,19 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
                     <span style="font-size: 0.85rem; font-weight: 700; color: #8a99ad;">TOTAL:</span>
                     <strong id="total-carrito" style="font-size: 1.2rem; color: #fff;">$0</strong>
                 </div>
-                <button id="finalizar-compra" style="display: block !important; width: 100% !important; background-color: #25d366 !important; color: #fff !important; border: none !important; padding: 14px !important; border-radius: 8px !important; font-weight: 800 !important; font-size: 0.9rem !important; text-transform: uppercase !important; cursor: pointer !important;">
+                <button id="finalizar-compra">
                     PEDIR POR WHATSAPP ↗
                 </button>
             </div>
         </aside>
     </div>
 
-    <!-- VENTANA DE DETALLES DEL PRODUCTO -->
+    <!-- MODAL DE DETALLES DEL PRODUCTO -->
     <div class="modal-producto" id="modal-producto" aria-hidden="true">
         <div class="modal-producto-fondo" id="cerrar-modal-fondo"></div>
 
-        <section class="modal-producto-contenido" role="dialog">
-            <button class="modal-producto-cerrar" id="cerrar-modal-producto" type="button">×</button>
+        <section class="modal-producto-contenido" role="dialog" aria-modal="true">
+            <button class="modal-producto-cerrar" id="cerrar-modal-producto" type="button" aria-label="Cerrar">×</button>
 
             <div class="modal-producto-imagen">
                 <img id="detalle-imagen" src="" alt="">
@@ -236,7 +235,7 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
         </section>
     </div>
 
-    <!-- NOTIFICACIÓN FLOTANTE (TOAST) -->
+    <!-- NOTIFICACIÓN TOAST -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 99999;">
         <div id="toast-carrito" class="toast align-items-center text-bg-dark border-0 shadow-lg" role="alert">
             <div class="d-flex">
@@ -244,12 +243,12 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
                     <strong id="toast-titulo" class="d-block text-white">¡PRODUCTO AGREGADO!</strong>
                     <small id="toast-subtitulo" class="d-block mt-1">Se sumó correctamente a tu carrito.</small>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- SCRIPTS DE INTERACCIÓN -->
     <script>
         const btnHamburguesa = document.getElementById("btn-hamburguesa");
         const menuNavegacion = document.getElementById("menu-navegacion");
