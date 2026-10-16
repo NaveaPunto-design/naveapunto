@@ -19,7 +19,7 @@ let productos = [
         categoria: "aromatizantes",
         precio: 3700,
         disponibles: 8,
-        imagen: " perfumeindividual.jpeg.jpeg",
+        imagen: " perfumeindivudual.jpeg.jpeg",
         descripcion: "Aromatizante ambiental (código 106) de alta duración con fragancia Sport Car Essence.",
         uso: "Perfumar el habitáculo del vehículo[cite: 9].",
         aplicacion: "Pulverizar en las alfombras o zonas textiles manteniendo distancia."
