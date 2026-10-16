@@ -186,7 +186,7 @@ button {
     align-items: center !important;
     justify-content: flex-start !important;
     background: linear-gradient(135deg, rgba(8, 9, 13, 0.85) 20%, rgba(8, 9, 13, 0.4) 100%), 
-                url('auto.jpg') no-repeat center center / cover !important;
+                url('auto.jpeg.jpeg') no-repeat center center / cover !important;
 }
 
 .portada-contenido {
