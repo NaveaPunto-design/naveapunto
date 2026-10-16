@@ -12,187 +12,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="estilos.css">
-
-    <!-- ESTILOS DE MEJORA MÓVIL (MENÚ HAMBURGUESA Y HEADER PROFESIONAL) -->
-    <style>
-        /* Notificación flotante (Toast) sobria y elegante */
-        #toast-carrito {
-            background-color: #0d1117 !important;
-            border: 1px solid #1f293d !important;
-            border-radius: 6px !important;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5) !important;
-        }
-        #toast-titulo {
-            letter-spacing: 1px !important;
-            text-transform: uppercase !important;
-            font-size: 0.82rem !important;
-        }
-        #toast-subtitulo {
-            color: #8a99ad !important;
-            font-size: 0.78rem !important;
-        }
-
-        /* HEADER MODERNO Y MENÚ HAMBURGUESA */
-        .encabezado {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 24px;
-            background-color: #0a0d14;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .logo-imagen img {
-            max-height: 38px;
-            width: auto;
-            display: block;
-        }
-
-        .header-acciones {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        /* Ícono de Carrito Minimalista */
-        .boton-carrito-icono {
-            background: transparent;
-            border: none;
-            color: #fff;
-            font-size: 1.25rem;
-            position: relative;
-            cursor: pointer;
-            padding: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.2s ease;
-        }
-        .boton-carrito-icono:hover {
-            color: #e63946;
-        }
-        #cantidad-carrito {
-            position: absolute;
-            top: -2px;
-            right: -6px;
-            background-color: #e63946;
-            color: white;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 1px 5px;
-            border-radius: 50%;
-            line-height: 1;
-        }
-
-        /* Botón Hamburguesa */
-        .menu-hamburguesa {
-            background: transparent;
-            border: none;
-            color: #fff;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            padding: 4px;
-        }
-
-        /* Menú desplegable móvil / Navegación */
-        .navegacion {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-        .navegacion a {
-            color: #c9d1d9;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: color 0.2s ease;
-        }
-        .navegacion a:hover {
-            color: #e63946;
-        }
-
-        @media (max-width: 768px) {
-            .encabezado {
-                padding: 10px 16px;
-            }
-            .navegacion {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: #0d1117;
-                flex-direction: column;
-                padding: 20px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-                z-index: 999;
-            }
-            .navegacion.activo {
-                display: flex;
-            }
-            .navegacion a {
-                padding: 10px 20px;
-                width: 100%;
-                text-align: center;
-                font-size: 0.9rem;
-            }
-
-            /* Grilla de productos en celdas de 2 */
-            .grilla-productos, #grilla-productos {
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 8px !important;
-                padding: 4px !important;
-                width: 100% !important;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .menu-hamburguesa {
-                display: none !important;
-            }
-        }
-
-        /* Estilo compacto para redes sociales en el footer */
-        .redes-footer {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin: 15px 0;
-        }
-        .redes-footer a {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 8px 14px;
-            border-radius: 8px;
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: all 0.2s ease;
-        }
-        .redes-footer a:hover {
-            border-color: #e63946;
-            background: rgba(230, 57, 70, 0.1);
-        }
-        .redes-footer .icono-red {
-            color: #e63946;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -201,13 +20,6 @@
         <a href="#" class="logo-imagen">
             <img src="logo.jpeg" alt="Nave A Punto Detailing">
         </a>
-
-        <nav class="navegacion" id="menu-navegacion">
-            <a href="#inicio" onclick="cerrarMenuMovil()">Inicio</a>
-            <a href="#productos" onclick="cerrarMenuMovil()">Productos</a>
-            <a href="#marcas" onclick="cerrarMenuMovil()">Marcas</a>
-            <a href="#quienes-somos" onclick="cerrarMenuMovil()">Quiénes somos</a>
-        </nav>
 
         <div class="header-acciones">
             <button class="boton-carrito-icono" id="abrir-carrito" aria-label="Abrir carrito">
@@ -219,25 +31,31 @@
                 ☰
             </button>
         </div>
+
+        <nav class="navegacion" id="menu-navegacion">
+            <a href="#inicio" onclick="cerrarMenuMovil()">Inicio</a>
+            <a href="#productos" onclick="cerrarMenuMovil()">Productos</a>
+            <a href="#marcas" onclick="cerrarMenuMovil()">Marcas</a>
+            <a href="#quienes-somos" onclick="cerrarMenuMovil()">Quiénes somos</a>
+        </nav>
     </header>
 
     <main>
         <section class="portada" id="inicio">
             <div class="portada-contenido">
-                <p class="etiqueta">NAVEAPUNTO DETAILING STORE</p>
+                <p class="etiqueta">NAVE A PUNTO</p>
 
                 <h1>
-                    LLEVÁ EL CUIDADO<br>
-                    DE TU AUTO <span>AL SIGUIENTE NIVEL.</span>
+                    LLEVA EL CUIDADO<br>
+                    DE TU AUTO AL <span>SIGUIENTE NIVEL</span>
                 </h1>
 
-                <p class="descripcion">
-                    Productos de detailing, marcas reconocidas
-                    y todo lo que necesitás para cuidar tu vehículo.
+                <p class="descripcion" style="color: #e63946; font-weight: 700; letter-spacing: 1px;">
+                    Detailing Store
                 </p>
 
                 <a href="#productos" class="boton-principal">
-                    EXPLORAR PRODUCTOS ↗
+                    EXPLORAR PRODUCTOS
                 </a>
             </div>
         </section>
@@ -306,13 +124,6 @@
                  En NaveaPunto nos dedicamos al mundo del detailing y al cuidado automotor, ofreciendo una variedad de productos para la limpieza, protección y mantenimiento de tu vehículo.
 
 Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con productos de calidad y una experiencia de compra sencilla y cómoda. Trabajamos para brindarte soluciones que se adapten a tus necesidades, construyendo una relación basada en la calidad, el compromiso y, sobre todo, la confianza de nuestros clientes.
-                </p>
-
-                <p class="quienes-texto">
-                    Queremos que encuentres en un solo lugar distintas
-                    opciones para el cuidado de tu auto, con un catálogo
-                    fácil de explorar y una forma sencilla de realizar
-                    tus pedidos.
                 </p>
 
                 <div class="quienes-destacados">
@@ -465,7 +276,7 @@ Nuestro objetivo es que encuentres todo lo que necesitás en un solo lugar, con 
         </div>
     </div>
 
-    <!-- SCRIPTS PARA EL MENÚ HAMBURGUESA Y FUNCIONAMIENTO -->
+    <!-- SCRIPT PARA EL MENÚ HAMBURGUESA -->
     <script>
         const btnHamburguesa = document.getElementById("btn-hamburguesa");
         const menuNavegacion = document.getElementById("menu-navegacion");
