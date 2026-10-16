@@ -1347,3 +1347,94 @@ input:focus-visible {
         letter-spacing: 1px !important;
     }
 }
+/* =========================================================
+   AJUSTES SOLICITADOS: LOGO GRANDE, AUTO VISIBLE Y BOTÓN WHATSAPP
+   ========================================================= */
+
+/* 1. LOGO MÁS GRANDE EN EL HEADER */
+.logo-imagen img {
+    height: 62px !important; /* Logo más destacado */
+    max-height: 62px !important;
+}
+
+/* 2. AUTO DE FONDO BIEN VISIBLE EN LA PORTADA */
+.portada {
+    position: relative !important;
+    background: linear-gradient(to right, rgba(5, 7, 11, 0.85) 20%, rgba(5, 7, 11, 0.3) 100%), 
+                url('auto.jpg.jpg') no-repeat center right / cover !important;
+}
+
+.portada::after {
+    opacity: 0.8 !important; /* Le subimos la visibilidad al fondo del auto */
+}
+
+/* 3. BARRA DEL MEDIO ELEGANTE Y MODERNA */
+.beneficios {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 18px !important;
+    padding: 18px 20px !important;
+    background: rgba(13, 17, 23, 0.95) !important;
+    border-top: 1px solid rgba(230, 57, 70, 0.3) !important;
+    border-bottom: 1px solid rgba(230, 57, 70, 0.3) !important;
+}
+
+.beneficios div {
+    color: #ffffff !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    padding: 6px 14px !important;
+    border-left: 2px solid #e63946 !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-radius: 0 6px 6px 0 !important;
+}
+
+/* 4. SOLUCIÓN DEFINTIVA AL BOTÓN DE WHATSAPP DEL CARRITO */
+.panel-carrito {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100vh !important;
+    padding-bottom: 20px !important;
+    box-sizing: border-box !important;
+}
+
+#items-carrito {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    padding-bottom: 15px !important;
+}
+
+.total-carrito {
+    flex-shrink: 0 !important;
+    padding-top: 15px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    background: #0d1117 !important;
+    display: block !important;
+}
+
+#finalizar-compra {
+    display: block !important;
+    width: 100% !important;
+    background-color: #25d366 !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 14px !important;
+    border-radius: 8px !important;
+    font-weight: 800 !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
+    margin-top: 12px !important;
+}
+
+@media (max-width: 768px) {
+    .logo-imagen img {
+        height: 50px !important;
+    }
+}
