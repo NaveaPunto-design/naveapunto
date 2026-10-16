@@ -91,7 +91,7 @@ let productos = [
         categoria: "microfibras",
         precio: 4800,
         disponibles: 6,
-        imagen: "paño secado desgargar",
+        imagen: "pañosecado3.jpeg.jpeg",
         descripcion: "Pack de 3 paños de microfibra multiuso (código 614).",
         uso: "Limpieza de interiores, ceras y detalles[cite: 8].",
         aplicacion: "Utilizar limpia y seca o con productos específicos."
@@ -115,7 +115,7 @@ let productos = [
         categoria: "microfibras",
         precio: 8000,
         disponibles: 6,
-        imagen: "WhatsApp Image 2026-10-15 at 5.52.10 PM_2.jpeg",
+        imagen: "microfibrasecado.jpeg.jpeg",
         descripcion: "Paño de secado de alta absorción (código 604) diseñado para no dejar marcas.",
         uso: "Secado rápido y seguro de vidrios y carrocería[cite: 10].",
         aplicacion: "Deslizar suavemente sobre la superficie húmeda."
