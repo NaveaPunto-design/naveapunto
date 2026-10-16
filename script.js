@@ -141,7 +141,7 @@ let productos = [
         categoria: "interior",
         precio: 24000,
         disponibles: 5,
-        imagen: "WhatsApp Image 2026-10-15 at 5.52.11 PM_2.jpeg",
+        imagen: "combointeriorprem.jpeg",
         esCombo: true,
         descripcion: "APC + Silicona + Pad x2 + Aromatizante.",
         uso: "Kit integral para la limpieza profunda, restauración de brillo, protección y perfumado del habitáculo[cite: 9].",
