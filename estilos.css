@@ -1438,3 +1438,79 @@ input:focus-visible {
         height: 50px !important;
     }
 }
+/* =========================================================
+   NUEVO FONDO DEL AUTO Y PRODUCTOS MÁS GORDITOS EN CELULAR
+   ========================================================= */
+
+/* 1. Fondo del auto adaptado para que se luzca perfecto */
+.portada {
+    position: relative !important;
+    min-height: 90vh !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 140px 9% 80px !important;
+    background: linear-gradient(rgba(5, 7, 11, 0.65), rgba(5, 7, 11, 0.85)), 
+                url('auto.jpg') no-repeat center center / cover !important;
+}
+
+/* 2. Productos más llenos, gorditos y armónicos en celulares */
+@media (max-width: 768px) {
+    .grilla-productos, #grilla-productos {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 8px !important;
+    }
+
+    .tarjeta-producto {
+        background-color: #12161f !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 14px !important;
+        padding: 12px !important;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.5) !important;
+    }
+
+    .producto-imagen-contenedor {
+        height: 140px !important;
+        max-height: 140px !important;
+        background-color: #0b0f17 !important;
+        border-radius: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .producto-info {
+        padding: 4px 2px !important;
+    }
+
+    .producto-info h3 {
+        font-size: 0.88rem !important;
+        font-weight: 800 !important;
+        line-height: 1.25 !important;
+        margin-bottom: 6px !important;
+    }
+
+    .producto-descripcion {
+        display: block !important; /* Mostramos la bajada para que se llene más la tarjeta */
+        font-size: 0.72rem !important;
+        color: #94a3b8 !important;
+        margin-bottom: 8px !important;
+        line-height: 1.3 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    .producto-precio {
+        font-size: 1.05rem !important;
+        font-weight: 900 !important;
+        margin-bottom: 8px !important;
+    }
+
+    .boton-agregar {
+        padding: 10px !important;
+        font-size: 0.78rem !important;
+        font-weight: 800 !important;
+        border-radius: 8px !important;
+    }
+}
