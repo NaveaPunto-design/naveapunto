@@ -53,7 +53,7 @@ button {
 }
 
 /* ==========================================
-   HEADER / ENCABEZADO TRANSPARENTE Y LIMPIO
+   HEADER / ENCABEZADO
    ========================================== */
 
 .encabezado {
@@ -76,7 +76,7 @@ button {
 }
 
 .logo-imagen img {
-    height: 52px !important;
+    height: 58px !important;
     width: auto !important;
     object-fit: contain;
     transition: transform 0.25s ease;
@@ -173,20 +173,20 @@ button {
 }
 
 /* ==========================================
-   HERO / PORTADA CINEMATOGRÁFICA
+   HERO / PORTADA CON AUTO DE FONDO
    ========================================== */
 
 .portada {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    min-height: 90vh;
-    padding: 140px 8% 80px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background: linear-gradient(135deg, rgba(8, 9, 13, 0.92) 20%, rgba(8, 9, 13, 0.5) 100%), 
-                url('auto.jpg') no-repeat center center / cover;
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: hidden !important;
+    min-height: 90vh !important;
+    padding: 140px 8% 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: linear-gradient(135deg, rgba(8, 9, 13, 0.85) 20%, rgba(8, 9, 13, 0.4) 100%), 
+                url('auto.jpg') no-repeat center center / cover !important;
 }
 
 .portada-contenido {
@@ -251,31 +251,31 @@ button {
 }
 
 /* ==========================================
-   BARRA DE BENEFICIOS MODERNA
+   BARRA DE BENEFICIOS
    ========================================== */
 
 .beneficios {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px 7%;
-    background: var(--superficie);
-    border-top: 1px solid var(--borde);
-    border-bottom: 1px solid var(--borde);
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    padding: 20px 7% !important;
+    background: var(--superficie) !important;
+    border-top: 1px solid var(--borde) !important;
+    border-bottom: 1px solid var(--borde) !important;
 }
 
 .beneficios div {
-    color: var(--gris);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    color: var(--gris) !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
 }
 
 /* ==========================================
-   CATÁLOGO Y TARJETAS DE PRODUCTOS (PRIORIDAD)
+   CATÁLOGO Y TARJETAS
    ========================================== */
 
 .seccion-productos {
@@ -365,7 +365,6 @@ button {
     box-shadow: 0 0 0 3px rgba(233, 35, 58, 0.15);
 }
 
-/* GRILLA DE PRODUCTOS RESPONSIVA */
 .grilla-productos {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -406,7 +405,6 @@ button {
     box-shadow: 0 4px 10px rgba(227, 38, 54, 0.4) !important;
 }
 
-/* CONTENEDOR DE IMAGEN CUADRADO Y LIMPIO (ASPECT RATIO 1/1) */
 .producto-imagen-contenedor {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -537,7 +535,7 @@ button {
 }
 
 /* ==========================================
-   SECCIÓN MARCAS Y QUIÉNES SOMOS
+   SECCIONES MARCAS Y QUIÉNES SOMOS
    ========================================== */
 
 .seccion-marcas {
@@ -864,7 +862,7 @@ button {
 }
 
 /* ==========================================
-   MODAL DE DETALLES DE PRODUCTO
+   MODAL DE PRODUCTOS
    ========================================== */
 
 .modal-producto {
@@ -1026,20 +1024,19 @@ button {
 }
 
 /* ==========================================
-   ADAPTABILIDAD MÓVIL (MOBILE FIRST)
+   ADAPTABILIDAD MÓVIL
    ========================================== */
 
 @media (max-width: 768px) {
     .portada {
-        padding: 120px 6% 60px;
-        min-height: 80vh;
+        padding: 120px 6% 60px !important;
+        min-height: 80vh !important;
     }
 
     .portada h1 {
-        font-size: 2.3rem;
+        font-size: 2.3rem !important;
     }
 
-    /* Grilla de 2 columnas optimizada para móviles (Tarjetas llenas y proporcionales) */
     .grilla-productos, #grilla-productos {
         display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -1071,7 +1068,7 @@ button {
     }
 
     .producto-descripcion {
-        display: none !important; /* Oculta textos largos en celdas pequeñas de móvil para mantener limpieza visual */
+        display: none !important;
     }
 
     .producto-precio {
@@ -1080,7 +1077,7 @@ button {
     }
 
     .boton-ver-detalles {
-        display: none !important; /* Oculto en móvil para ganar espacio y destacar la compra directa */
+        display: none !important;
     }
 
     .boton-agregar {
