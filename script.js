@@ -8,9 +8,9 @@ let productos = [
         precio: 5500,
         disponibles: 6,
         imagen: "phneutro.jpeg.jpeg",
-        descripcion: "Shampoo con PH neutro (código 301) que limpia sin dañar tratamientos previos ni ceras.",
-        uso: "Lavado exterior seguro de la carrocería.",
-        aplicacion: "Diluir en agua según instrucciones, lavar con guante de microfibra y enjuagar."
+        descripcion: "Shampoo con PH neutro que limpia sin dañar tratamientos previos ni ceras.",
+        uso: " Shampoo de pH neutro para limpiar la pintura y la carrocería del auto.",
+        aplicacion: "Diluir en agua, lavar con esponja y enjuagar.."
     },
     {
         id: 2,
@@ -20,9 +20,9 @@ let productos = [
         precio: 3700,
         disponibles: 8,
         imagen: " perfumeindivudual.jpeg.jpeg",
-        descripcion: "Aromatizante ambiental (código 106) de alta duración con fragancia Sport Car Essence.",
-        uso: "Perfumar el habitáculo del vehículo[cite: 9].",
-        aplicacion: "Pulverizar en las alfombras o zonas textiles manteniendo distancia."
+        descripcion: "Aromatizante ambiental de alta duración con fragancia Sport Car Essence.",
+        uso: " Aromatizante en gel para perfumar el interior del vehículo.",
+        aplicacion: "Abrir según las instrucciones del envase y colgar en el interior del auto."
     },
     {
         id: 3,
@@ -32,9 +32,10 @@ let productos = [
         precio: 6800,
         disponibles: 6,
         imagen: "apc.jpeg.jpeg",
-        descripcion: "Limpiador multipropósito de alta eficiencia (código 321) para eliminar suciedad difícil.",
-        uso: "Limpieza profunda de interiores, paneles y llantas[cite: 9].",
-        aplicacion: "Pulverizar sobre la superficie, remover con cepillo o pincel y retirar con microfibra."
+        descripcion: "Limpiador para eliminar suciedad y grasa de plásticos, alfombras y otras superficies compatibles.
+",
+        uso: "Limpieza profunda de interiores, paneles y llantas.",
+        aplicacion: "Diluir según la superficie, aplicar con un paño o cepillo y retirar la suciedad.."
     },
     {
         id: 4,
@@ -44,9 +45,9 @@ let productos = [
         precio: 12200,
         disponibles: 6,
         imagen: "cilicona.jpeg.jpeg",
-        descripcion: "Silicona aromatizada ideal (código 202) para restaurar el brillo y proteger plásticos y tableros.",
+        descripcion: " Producto para acondicionar plásticos interiores, mejorar su aspecto y aportar brillo y fragancia.",
         uso: "Protección y brillo de plásticos interiores.",
-        aplicacion: "Aplicar con un paño de microfibra limpio y dejar secar."
+        aplicacion: "Aplicar una pequeña cantidad con un paño o pad sobre la superficie limpia."
     },
     {
         id: 5,
@@ -56,9 +57,9 @@ let productos = [
         precio: 6600,
         disponibles: 6,
         imagen: "ceraindividual.jpeg.jpeg",
-        descripcion: "Cera automotriz Autobrillo de gran durabilidad que otorga un brillo extremo.",
+        descripcion: "Cera automotriz Autobrillo de gran durabilidad para el brillo de la pintura y ayudar a proteger la carrocería.",
         uso: "Protección de la laca y acabado espejo.",
-        aplicacion: "Aplicar en secciones, dejar secar unos minutos y lustrar con microfibra."
+        aplicacion: "Aplicar sobre la pintura limpia y seca, distribuir y lustrar con microfibra."
     },
     {
         id: 6,
@@ -70,7 +71,7 @@ let productos = [
         imagen: "esponjamicrofibraindividual.jpeg.jpeg",
         descripcion: "Esponja de microfibra  de doble acción para un lavado seguro sin rayas.",
         uso: "Lavado general y remoción de suciedad.",
-        aplicacion: "Usar con abundante shampoo diluido."
+        aplicacion: "Humedecer con agua y shampoo automotor y limpiar sin frotar con fuerza."
     },
     {
         id: 7,
@@ -80,9 +81,9 @@ let productos = [
         precio: 10100,
         disponibles: 6,
         imagen: "cepillomangocorto.jpeg.jpeg",
-        descripcion: "Cepillo de mango corto especializado para llegar a rincones difíciles.",
+        descripcion: "Cepillo para limpiar llantas y otras superficies resistentes, removiendo suciedad de zonas difíciles.",
         uso: "Limpieza de llantas, alfombras y plásticos.",
-        aplicacion: "Utilizar junto con el limpiador APC o shampoo."
+        aplicacion: "Utilizar con un limpiador adecuado y frotar suavemente."
     },
     {
         id: 8,
@@ -92,9 +93,9 @@ let productos = [
         precio: 4800,
         disponibles: 6,
         imagen: "pañosecado3.jpeg.jpeg",
-        descripcion: "Pack de 3 paños de microfibra multiuso.",
+        descripcion: "Pack de 3 Paños para limpiar superficies, retirar productos y dar terminaciones.",
         uso: "Limpieza de interiores, ceras y detalles.",
-        aplicacion: "Utilizar limpia y seca o con productos específicos."
+        aplicacion: "Utilizar limpios, secos o ligeramente húmedos, según la tarea.."
     },
     {
         id: 9,
@@ -104,9 +105,9 @@ let productos = [
         precio: 2500,
         disponibles: 6,
         imagen: "esponjainidivual.jpeg.jpeg",
-        descripcion: "Pack x2 de pads aplicadores de poliespuma .",
+        descripcion: "Pack x2 de paños absorbente para secar el vehículo después del lavado y evitar marcas.",
         uso: "Aplicación uniforme de ceras y acondicionadores.",
-        aplicacion: "Aplicar el producto sobre el pad y esparcir suavemente."
+        aplicacion: "Pasar suavemente sobre la carrocería después del enjuague."
     },
     {
         id: 10,
@@ -132,7 +133,7 @@ let productos = [
         esCombo: true,
         descripcion: "Ph neutro + Esponja + Paño de secado + Cepillo mango corto.",
         uso: "Kit completo y especializado para realizar un lavado exterior eficiente, seguro y sin dejar marcas.",
-        aplicacion: "Utilizar cada elemento respetando su función de lavado, remoción en rincones y secado final."
+        aplicacion: "Lavar con shampoo y esponja, limpiar las zonas adecuadas con el cepillo, enjuagar y secar."
     },
     {
         id: 12,
@@ -144,8 +145,8 @@ let productos = [
         imagen: "combointeriorprem.jpeg.jpeg",
         esCombo: true,
         descripcion: "APC + Silicona + Pad x2 + Aromatizante.",
-        uso: "Kit integral para la limpieza profunda, restauración de brillo, protección y perfumado del habitáculo.",
-        aplicacion: "Aplicar el APC para limpiar, la silicona para proteger plásticos, los pads y el aromatizante."
+        uso: "Kit integral para la limpieza profunda, restauración de brillo, acondicionar plásticos y perfumar el vehículo.",
+        aplicacion: "Limpiar con APC, aplicar la silicona con el pad y colocar el aromatizante."
     },
     {
         id: 13,
@@ -157,7 +158,7 @@ let productos = [
         imagen: "cera.jpeg.jpeg",
         esCombo: true,
         descripcion: "Cera Autobrillo + Paño microfibra x3.",
-        uso: "Kit diseñado para lograr un acabado espejo profesional y una alta protección duradera sobre la laca.",
+        uso: "Kit diseñado para lograr un acabado espejo profesional y una alta protección duradera sobre la carrocería.",
         aplicacion: "Aplicar la cera por secciones y lustrar cuidadosamente utilizando los paños de microfibra."
     },
     {
