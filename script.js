@@ -470,7 +470,7 @@ if (finalizarCompra) {
         mensaje += `\n*TOTAL: $${total.toLocaleString("es-AR")}*`;
         mensaje += "\n\n¿Tienen disponibilidad para coordinar la entrega?";
 
-        const telefono = "5491112345678";
+        const telefono = "5491160271711";
         const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
         window.open(url, "_blank");
     });
