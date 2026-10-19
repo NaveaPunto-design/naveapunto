@@ -10,7 +10,7 @@ let productos = [
         imagen: "phneutro.jpeg.jpeg",
         descripcion: "Shampoo con PH neutro que limpia sin dañar tratamientos previos ni ceras.",
         uso: " Shampoo de pH neutro para limpiar la pintura y la carrocería del auto.",
-        aplicacion: "Diluir en agua, lavar con esponja y enjuagar.."
+        aplicacion: "Diluir en agua, lavar con esponja y enjuagar."
     },
     {
         id: 2,
@@ -35,7 +35,7 @@ let productos = [
         descripcion: "Limpiador para eliminar suciedad y grasa de plásticos, alfombras y otras superficies compatibles".
 ",
         uso: "Limpieza profunda de interiores, paneles y llantas.",
-        aplicacion: "Diluir según la superficie, aplicar con un paño o cepillo y retirar la suciedad.."
+        aplicacion: "Diluir según la superficie, aplicar con un paño o cepillo y retirar la suciedad."
     },
     {
         id: 4,
@@ -95,7 +95,7 @@ let productos = [
         imagen: "pañosecado3.jpeg.jpeg",
         descripcion: "Pack de 3 Paños para limpiar superficies, retirar productos y dar terminaciones.",
         uso: "Limpieza de interiores, ceras y detalles.",
-        aplicacion: "Utilizar limpios, secos o ligeramente húmedos, según la tarea.."
+        aplicacion: "Utilizar limpios, secos o ligeramente húmedos, según la tarea."
     },
     {
         id: 9,
