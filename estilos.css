@@ -700,9 +700,16 @@ button {
 .panel-carrito {
     display: flex !important;
     flex-direction: column !important;
-    width: min(420px, 100%) !important;
-    height: 100vh !important;
-    /* ... */
+    width: 100% !important;
+    max-width: 400px !important;
+    height: 100% !important;
+    background-color: #0d1117 !important; /* Fondo totalmente oscuro y opaco */
+    padding: 20px !important;
+    border-left: 1px solid var(--borde) !important;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.9) !important;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-sizing: border-box !important;
 
 }
 
