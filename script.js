@@ -32,8 +32,7 @@ let productos = [
         precio: 6800,
         disponibles: 6,
         imagen: "apc.jpeg.jpeg",
-        descripcion: "Limpiador para eliminar suciedad y grasa de plásticos, alfombras y otras superficies compatibles".
-",
+        descripcion: "Limpiador para eliminar suciedad y grasa de plásticos, alfombras y otras superficies compatibles.",
         uso: "Limpieza profunda de interiores, paneles y llantas.",
         aplicacion: "Diluir según la superficie, aplicar con un paño o cepillo y retirar la suciedad."
     },
