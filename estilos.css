@@ -196,12 +196,34 @@ button {
 
 .etiqueta {
     margin-bottom: 14px;
-    color: var(--rojo);
-    font-size: 11px;
-    font-weight: 800;
+    font-size: 12px;
+    font-weight: 900;
     letter-spacing: 3px;
     text-transform: uppercase;
+    
+    /* EFECTO LED RGB ANIMADO CON RESPLANDOR */
+    background: linear-gradient(90deg, #ff0055, #e9233a, #ff00ff, #00f0ff, #ff0055);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: efectoLed 4s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(233, 35, 58, 0.8));
 }
+
+/* ANIMACIÓN PARA QUE CAMBIE DE COLOR CONTINUAMENTE */
+@keyframes efectoLed {
+    0% {
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 8px rgba(255, 0, 85, 0.8));
+    }
+    50% {
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.9));
+    }
+    100% {
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 8px rgba(255, 0, 85, 0.8));
+    }
 
 .portada h1 {
     font-family: 'Barlow Condensed', sans-serif;
