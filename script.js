@@ -143,8 +143,8 @@ let productos = [
         disponibles: 5,
         imagen: "combointeriorprem.jpeg.jpeg",
         esCombo: true,
-        descripcion: "APC + Silicona + Pad x2 + Aromatizante.",
-        uso: "Kit integral para la limpieza profunda, restauración de brillo, acondicionar plásticos y perfumar el vehículo (Aromas: Cítrico, Pino, Lavanda, Vainilla, New Car o Acqua).",
+        descripcion: "APC + Silicona + Pad x2 + Aromatizante (Aromas disponibles: Cítrico, Pino, Lavanda, Vainilla, New Car y Acqua).",
+        uso: "Kit integral para la limpieza profunda, restauración de brillo, acondicionar plásticos y perfumar el vehículo.",
         aplicacion: "Limpiar con APC, aplicar la silicona con el pad y colocar el aromatizante."
     },
     {
@@ -320,11 +320,25 @@ function abrirDetallesProducto(id) {
     }
 
     modalProducto.classList.add("abierto");
+
+    // TRUCO PARA EL BOTÓN "ATRÁS" DEL CELU: Añade estado al historial
+    history.pushState({ modalAbierto: true }, "");
 }
 
 function cerrarModal() {
     modalProducto.classList.remove("abierto");
+    // Si se cierra manualmente, damos un paso atrás en el historial del navegador si corresponde
+    if (window.history.state && window.history.state.modalAbierto) {
+        history.back();
+    }
 }
+
+// ESCUCHAR EL BOTÓN "ATRÁS" DEL CELULAR PARA CERRAR EL MODAL EN VEZ DE SALIR DE LA WEB
+window.addEventListener("popstate", () => {
+    if (modalProducto.classList.contains("abierto")) {
+        modalProducto.classList.remove("abierto");
+    }
+});
 
 if (cerrarModalProducto) cerrarModalProducto.addEventListener("click", cerrarModal);
 if (cerrarModalFondo) cerrarModalFondo.addEventListener("click", cerrarModal);
