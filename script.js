@@ -20,7 +20,7 @@ let productos = [
         precio: 3700,
         disponibles: 8,
         imagen: " perfumeindivudual.jpeg.jpeg",
-        descripcion: "Aromatizante ambiental de alta duración con fragancia Sport Car Essence.",
+        descripcion: "Aromatizante ambiental de alta duración. Fragancias disponibles: Cítrico, Pino, Lavanda, Vainilla, New Car y Acqua.",
         uso: " Aromatizante en gel para perfumar el interior del vehículo.",
         aplicacion: "Abrir según las instrucciones del envase y colgar en el interior del auto."
     },
@@ -144,7 +144,7 @@ let productos = [
         imagen: "combointeriorprem.jpeg.jpeg",
         esCombo: true,
         descripcion: "APC + Silicona + Pad x2 + Aromatizante.",
-        uso: "Kit integral para la limpieza profunda, restauración de brillo, acondicionar plásticos y perfumar el vehículo.",
+        uso: "Kit integral para la limpieza profunda, restauración de brillo, acondicionar plásticos y perfumar el vehículo (Aromas: Cítrico, Pino, Lavanda, Vainilla, New Car o Acqua).",
         aplicacion: "Limpiar con APC, aplicar la silicona con el pad y colocar el aromatizante."
     },
     {
