@@ -6,7 +6,7 @@ let productos = [
         marca: "K78",
         categoria: "lavado",
         precio: 5500,
-        disponibles: 6,
+        disponibles: 4,
         imagen: "phneutro.jpeg.jpeg",
         descripcion: "Shampoo con PH neutro que limpia sin dañar tratamientos previos ni ceras.",
         uso: " Shampoo de pH neutro para limpiar la pintura y la carrocería del auto.",
