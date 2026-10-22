@@ -44,7 +44,7 @@ let productos = [
         precio: 12200,
         disponibles: 5,
         imagen: "cilicona.jpeg.jpeg",
-        descripcion: " Producto para acondicionar plásticos interiores, mejorar su aspecto y aportar brillo y fragancia.",
+        descripcion: " Producto para acondicionar plásticos interiores, mejorar su aspecto y aportar brillo y fragancia Fragancias disponibles: Cítrico, Pino, Lavanda, Vainilla, New Car y Acqua.",
         uso: "Protección y brillo de plásticos interiores.",
         aplicacion: "Aplicar una pequeña cantidad con un paño o pad sobre la superficie limpia."
     },
