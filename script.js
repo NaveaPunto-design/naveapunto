@@ -18,7 +18,7 @@ let productos = [
         marca: "K78",
         categoria: "aromatizantes",
         precio: 3700,
-        disponibles: 4,
+        disponibles: 3,
         imagen: " perfumeindivudual.jpeg.jpeg",
         descripcion: "Aromatizante ambiental de alta duración. Fragancias disponibles: Cítrico, Pino, Lavanda, Vainilla, New Car y Acqua.",
         uso: " Aromatizante en gel para perfumar el interior del vehículo.",
