@@ -110,6 +110,15 @@ button {
     color: var(--rojo);
 }
 
+@keyframes pulsoBadge {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.14);
+    }
+}
+
 #cantidad-carrito {
     position: absolute !important;
     top: -4px !important;
@@ -125,6 +134,7 @@ button {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    animation: pulsoBadge 2.2s ease-in-out infinite;
 }
 
 .menu-hamburguesa {
@@ -189,9 +199,21 @@ button {
                 url('auto.jpeg.jpeg') no-repeat center center / cover !important;
 }
 
+@keyframes subirSuave {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .portada-contenido {
     max-width: 650px;
     z-index: 2;
+    animation: subirSuave 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* EFECTO LED RGB ANIMADO CON RESPLANDOR */
@@ -250,6 +272,8 @@ button {
 }
 
 .boton-principal {
+    position: relative;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -270,6 +294,32 @@ button {
     background: var(--rojo-hover);
     border-color: var(--rojo-hover);
     transform: translateY(-2px);
+}
+
+.boton-principal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: brilloBoton 4.5s infinite;
+}
+
+@keyframes brilloBoton {
+    0%, 75% {
+        left: -120%;
+    }
+    100% {
+        left: 140%;
+    }
 }
 
 /* ==========================================
@@ -410,6 +460,15 @@ button {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
+@keyframes latidoCombo {
+    0%, 100% {
+        box-shadow: 0 4px 10px rgba(227, 38, 54, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 18px rgba(255, 53, 70, 0.85);
+    }
+}
+
 .badge-combo {
     position: absolute !important;
     top: 12px !important;
@@ -425,6 +484,7 @@ button {
     letter-spacing: 0.5px !important;
     z-index: 5 !important;
     box-shadow: 0 4px 10px rgba(227, 38, 54, 0.4) !important;
+    animation: latidoCombo 2.4s ease-in-out infinite !important;
 }
 
 .producto-imagen-contenedor {
