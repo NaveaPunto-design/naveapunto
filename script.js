@@ -30,7 +30,7 @@ let productos = [
         marca: "K78",
         categoria: "limpieza",
         precio: 6800,
-        disponibles: 5,
+        disponibles: 4,
         imagen: "limpiadornaranja.jpeg.jpeg",
         descripcion: "Limpiador para eliminar suciedad y grasa de plásticos, alfombras y otras superficies compatibles.",
         uso: "Limpieza profunda de interiores, paneles y llantas.",
