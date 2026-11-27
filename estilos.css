@@ -1135,12 +1135,38 @@ button {
 
 @media (max-width: 768px) {
     .portada {
-        padding: 120px 6% 60px;
-        min-height: 80vh;
+        padding: 105px 6% 52px;
+        min-height: 68vh;
     }
 
     .portada h1 {
         font-size: 2.3rem;
+    }
+
+    .filtros {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 6px;
+        margin: 18px 0 14px;
+    }
+
+    .filtros::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filtros .filtro {
+        flex: 0 0 auto;
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .buscador-productos {
+        font-size: 16px;
+        margin-bottom: 24px;
     }
 
     .grilla-productos,
@@ -1188,6 +1214,7 @@ button {
     }
 
     .boton-agregar {
+        min-height: 40px;
         padding: 8px 4px;
         font-size: 0.72rem;
     }
@@ -1206,3 +1233,14 @@ button {
         max-height: 250px;
     }
 }
+```[cite: 1]
+
+### Qué quedó sumado en móvil
+* `.portada` ahora usa `min-height: 68vh` y `padding: 105px 6% 52px` para que el título y el botón aparezcan más rápido en pantalla[cite: 1].
+* `.filtros` se desliza en una fila horizontal con el dedo (`flex-wrap: nowrap`, `overflow-x: auto`) y botones de `min-height: 40px` sin barra fea[cite: 1].
+* `.buscador-productos` queda en `font-size: 16px` en celular para evitar zooms inesperados al enfocarlo[cite: 1].
+
+<ElicitationsGroup message="¿Qué te gustaría hacer ahora?">
+  <Elicitation label="Probarlo y revisar otro ajuste" query="Ya pegué el CSS actualizado; revisemos si hay algo más para mejorar en la tienda."/>
+  <Elicitation label="Mejorar el cierre por WhatsApp" query="Sugerime mejoras prácticas para el carrito y el cierre de pedido por WhatsApp en NaveaPunto."/>
+</ElicitationsGroup>
